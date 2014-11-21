@@ -1,0 +1,1536 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY ecrm "http://erlangen-crm.org/140617/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY herder-inst "http://wisski.cs.fau.de/herder-test/content/" >
+    <!ENTITY herder "http://wwwdh.cs.fau.de/ontologies/herder-test/" >
+]>
+
+
+<rdf:RDF xmlns="http://wwwdh.cs.fau.de/ontologies/herder-test/"
+     xml:base="http://wwwdh.cs.fau.de/ontologies/herder-test/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ecrm="http://erlangen-crm.org/140617/"
+     xmlns:herder-inst="http://wisski.cs.fau.de/herder-test/content/"
+     xmlns:herder="http://wwwdh.cs.fau.de/ontologies/herder-test/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://wwwdh.cs.fau.de/ontologies/herder-test/">
+        <owl:versionInfo rdf:datatype="&xsd;integer">141027</owl:versionInfo>
+        <rdfs:comment xml:lang="de">141027 (Martin Scholz):
+- Anpassungen an CHML 0.9:
+- Sprachabhängige Text/Appell-Klassen verworfen
+- Erstellen von Annotationen zum OWL-CHML-Mapping</rdfs:comment>
+        <owl:imports rdf:resource="http://erlangen-crm.org/140617/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/mappingGuideline -->
+
+    <owl:AnnotationProperty rdf:about="&herder;mappingGuideline">
+        <rdfs:comment xml:lang="en">Notes or specifications how this ontology maps to CHML.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;comment"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R11_stellte_her -->
+
+    <owl:ObjectProperty rdf:about="&herder;R11_stellte_her">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P108_has_produced"/>
+        <rdfs:domain rdf:resource="&herder;H27_Herstellung"/>
+        <rdfs:range rdf:resource="&herder;H5_Materielles_Objekt"/>
+        <owl:inverseOf rdf:resource="&herder;R11i_wurde_hergestellt_durch"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R11i_wurde_hergestellt_durch -->
+
+    <owl:ObjectProperty rdf:about="&herder;R11i_wurde_hergestellt_durch">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P108i_was_produced_by"/>
+        <rdfs:range rdf:resource="&herder;H27_Herstellung"/>
+        <rdfs:domain rdf:resource="&herder;H5_Materielles_Objekt"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R12_hat_Pseudonym -->
+
+    <owl:ObjectProperty rdf:about="&herder;R12_hat_Pseudonym">
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131_is_identified_by"/>
+        <rdfs:domain rdf:resource="&herder;H14_Natuerliche_Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R12i_ist_Pseudonym_von -->
+
+    <owl:ObjectProperty rdf:about="&herder;R12i_ist_Pseudonym_von">
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131i_identifies"/>
+        <rdfs:range rdf:resource="&herder;H14_Natuerliche_Person"/>
+        <owl:inverseOf rdf:resource="&herder;R12_hat_Pseudonym"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R13_hat_Geburtsname -->
+
+    <owl:ObjectProperty rdf:about="&herder;R13_hat_Geburtsname">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131_is_identified_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R13i_ist_Geburtsname_von -->
+
+    <owl:ObjectProperty rdf:about="&herder;R13i_ist_Geburtsname_von">
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131i_identifies"/>
+        <rdfs:range rdf:resource="&herder;H14_Natuerliche_Person"/>
+        <owl:inverseOf rdf:resource="&herder;R13_hat_Geburtsname"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R14_hat_Titel -->
+
+    <owl:ObjectProperty rdf:about="&herder;R14_hat_Titel">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131_is_identified_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R14i_ist_Titel_von -->
+
+    <owl:ObjectProperty rdf:about="&herder;R14i_ist_Titel_von">
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131i_identifies"/>
+        <rdfs:range rdf:resource="&herder;H14_Natuerliche_Person"/>
+        <owl:inverseOf rdf:resource="&herder;R14_hat_Titel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R15_hat_Grad -->
+
+    <owl:ObjectProperty rdf:about="&herder;R15_hat_Grad">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131_is_identified_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R15i_ist_Grad_von -->
+
+    <owl:ObjectProperty rdf:about="&herder;R15i_ist_Grad_von">
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131i_identifies"/>
+        <rdfs:range rdf:resource="&herder;H14_Natuerliche_Person"/>
+        <owl:inverseOf rdf:resource="&herder;R15_hat_Grad"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R16_enthaelt_Vornamen -->
+
+    <owl:ObjectProperty rdf:about="&herder;R16_enthaelt_Vornamen">
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P106_is_composed_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R16i_ist_Vorname_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R16i_ist_Vorname_in">
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P106i_forms_part_of"/>
+        <owl:inverseOf rdf:resource="&herder;R16_enthaelt_Vornamen"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R17_enthaelt_Nachnamen -->
+
+    <owl:ObjectProperty rdf:about="&herder;R17_enthaelt_Nachnamen">
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P106_is_composed_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R17i_ist_Nachname_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R17i_ist_Nachname_in">
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P106i_forms_part_of"/>
+        <owl:inverseOf rdf:resource="&herder;R17_enthaelt_Nachnamen"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R18_enthaelt_ersten_Vornamen -->
+
+    <owl:ObjectProperty rdf:about="&herder;R18_enthaelt_ersten_Vornamen">
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R16_enthaelt_Vornamen"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R18i_ist_erster_Vorname_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R18i_ist_erster_Vorname_in">
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R16i_ist_Vorname_in"/>
+        <owl:inverseOf rdf:resource="&herder;R18_enthaelt_ersten_Vornamen"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R19_enthaelt_ersten_Nachnamen -->
+
+    <owl:ObjectProperty rdf:about="&herder;R19_enthaelt_ersten_Nachnamen">
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R17_enthaelt_Nachnamen"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R19i_ist_erster_Nachname_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R19i_ist_erster_Nachname_in">
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R17i_ist_Nachname_in"/>
+        <owl:inverseOf rdf:resource="&herder;R19_enthaelt_ersten_Nachnamen"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R1_protokollierte -->
+
+    <owl:ObjectProperty rdf:about="&herder;R1_protokollierte">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P129_is_about"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P70_documents"/>
+        <rdfs:range rdf:resource="&herder;H1_Aktion"/>
+        <rdfs:domain rdf:resource="&herder;H2_Protokoll"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R4_documents"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R1i_ist_protokolliert_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R1i_ist_protokolliert_in">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P129i_is_subject_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P70i_is_documented_in"/>
+        <rdfs:domain rdf:resource="&herder;H1_Aktion"/>
+        <rdfs:range rdf:resource="&herder;H2_Protokoll"/>
+        <owl:inverseOf rdf:resource="&herder;R1_protokollierte"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R4i_ist_erwaehnt_in"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R20_hat_Geschlecht -->
+
+    <owl:ObjectProperty rdf:about="&herder;R20_hat_Geschlecht">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2_has_type"/>
+        <rdfs:domain rdf:resource="&herder;H14_Natuerliche_Person"/>
+        <rdfs:range rdf:resource="&herder;H48_Geschlecht"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R20i_ist_Geschlecht_von -->
+
+    <owl:ObjectProperty rdf:about="&herder;R20i_ist_Geschlecht_von">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2i_is_type_of"/>
+        <rdfs:range rdf:resource="&herder;H14_Natuerliche_Person"/>
+        <rdfs:domain rdf:resource="&herder;H48_Geschlecht"/>
+        <owl:inverseOf rdf:resource="&herder;R20_hat_Geschlecht"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R21_hat_Nationalitaet -->
+
+    <owl:ObjectProperty rdf:about="&herder;R21_hat_Nationalitaet">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P107i_is_current_or_former_member_of"/>
+        <rdfs:domain rdf:resource="&herder;H14_Natuerliche_Person"/>
+        <rdfs:range rdf:resource="&herder;H51_Nationalitaet"/>
+        <owl:inverseOf rdf:resource="&herder;R21i_ist_Nationalitaet_von"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R21i_ist_Nationalitaet_von -->
+
+    <owl:ObjectProperty rdf:about="&herder;R21i_ist_Nationalitaet_von">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P107_has_current_or_former_member"/>
+        <rdfs:range rdf:resource="&herder;H14_Natuerliche_Person"/>
+        <rdfs:domain rdf:resource="&herder;H51_Nationalitaet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R22_beginnt -->
+
+    <owl:ObjectProperty rdf:about="&herder;R22_beginnt">
+        <rdfs:domain rdf:resource="&ecrm;E85_Joining"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P116_starts"/>
+        <rdfs:range rdf:resource="&herder;H52_Zugehoerigkeit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R22i_beginnt_mit -->
+
+    <owl:ObjectProperty rdf:about="&herder;R22i_beginnt_mit">
+        <rdfs:range rdf:resource="&ecrm;E85_Joining"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P116i_is_started_by"/>
+        <rdfs:domain rdf:resource="&herder;H52_Zugehoerigkeit"/>
+        <owl:inverseOf rdf:resource="&herder;R22_beginnt"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R23_beendet -->
+
+    <owl:ObjectProperty rdf:about="&herder;R23_beendet">
+        <rdfs:domain rdf:resource="&ecrm;E86_Leaving"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P115_finishes"/>
+        <rdfs:range rdf:resource="&herder;H52_Zugehoerigkeit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R23i_endet_mit -->
+
+    <owl:ObjectProperty rdf:about="&herder;R23i_endet_mit">
+        <rdfs:range rdf:resource="&ecrm;E86_Leaving"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P115i_is_finished_by"/>
+        <rdfs:domain rdf:resource="&herder;H52_Zugehoerigkeit"/>
+        <owl:inverseOf rdf:resource="&herder;R23_beendet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R24_war_Mitglied_waehrend -->
+
+    <owl:ObjectProperty rdf:about="&herder;R24_war_Mitglied_waehrend">
+        <rdfs:comment xml:lang="en">This is a shortcut for H19 Akteur -&gt; P143 joined -&gt; E85 Joining -&gt; R22 beginnt -&gt; H52 Zugehoerigkeit</rdfs:comment>
+        <rdfs:domain rdf:resource="&herder;H19_Akteur"/>
+        <rdfs:range rdf:resource="&herder;H52_Zugehoerigkeit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R24i_hatte_Mitglied_waehrend -->
+
+    <owl:ObjectProperty rdf:about="&herder;R24i_hatte_Mitglied_waehrend">
+        <rdfs:range rdf:resource="&herder;H19_Akteur"/>
+        <rdfs:domain rdf:resource="&herder;H52_Zugehoerigkeit"/>
+        <owl:inverseOf rdf:resource="&herder;R24_war_Mitglied_waehrend"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R25_hatte_zum_Ziel -->
+
+    <owl:ObjectProperty rdf:about="&herder;R25_hatte_zum_Ziel">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P21_had_general_purpose"/>
+        <rdfs:domain rdf:resource="&herder;H1_Aktion"/>
+        <rdfs:range rdf:resource="&herder;H72_Ziel_einer_Aktion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R25i_war_Ziel_von -->
+
+    <owl:ObjectProperty rdf:about="&herder;R25i_war_Ziel_von">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P21i_was_purpose_of"/>
+        <rdfs:range rdf:resource="&herder;H1_Aktion"/>
+        <rdfs:domain rdf:resource="&herder;H72_Ziel_einer_Aktion"/>
+        <owl:inverseOf rdf:resource="&herder;R25_hatte_zum_Ziel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R26_bildet_ab -->
+
+    <owl:ObjectProperty rdf:about="&herder;R26_bildet_ab">
+        <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P70_documents"/>
+        <rdfs:domain rdf:resource="&herder;H4_Quelle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R26i_wird_abgebildet_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R26i_wird_abgebildet_in">
+        <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P70i_is_documented_in"/>
+        <rdfs:range rdf:resource="&herder;H4_Quelle"/>
+        <owl:inverseOf rdf:resource="&herder;R26_bildet_ab"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R27_is_similar_to -->
+
+    <owl:ObjectProperty rdf:about="&herder;R27_is_similar_to">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P130_shows_features_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P130i_features_are_also_found_on"/>
+        <rdfs:range rdf:resource="&herder;H18_Gegenstand"/>
+        <rdfs:domain rdf:resource="&herder;H18_Gegenstand"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R28_handelt_von -->
+
+    <owl:ObjectProperty rdf:about="&herder;R28_handelt_von">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P129_is_about"/>
+        <rdfs:range rdf:resource="&herder;H29_Periode"/>
+        <rdfs:domain rdf:resource="&herder;H4_Quelle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R28i_wird_illustriert_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R28i_wird_illustriert_in">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P129i_is_subject_of"/>
+        <rdfs:domain rdf:resource="&herder;H29_Periode"/>
+        <rdfs:range rdf:resource="&herder;H4_Quelle"/>
+        <owl:inverseOf rdf:resource="&herder;R28_handelt_von"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R29_reconstructs -->
+
+    <owl:ObjectProperty rdf:about="&herder;R29_reconstructs">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P138_represents"/>
+        <rdfs:domain rdf:resource="&herder;H3_3D-Rekonstruktion"/>
+        <rdfs:range rdf:resource="&herder;H5_Materielles_Objekt"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R29i_has_reconstruction -->
+
+    <owl:ObjectProperty rdf:about="&herder;R29i_has_reconstruction">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P138i_has_representation"/>
+        <rdfs:range rdf:resource="&herder;H3_3D-Rekonstruktion"/>
+        <rdfs:domain rdf:resource="&herder;H5_Materielles_Objekt"/>
+        <owl:inverseOf rdf:resource="&herder;R29_reconstructs"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R2_benutzte_Vorlage -->
+
+    <owl:ObjectProperty rdf:about="&herder;R2_benutzte_Vorlage">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P32_used_general_technique"/>
+        <rdfs:domain rdf:resource="&herder;H1_Aktion"/>
+        <rdfs:range rdf:resource="&herder;H7_Aktionstyp"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R2i_war_Vorlage_für -->
+
+    <owl:ObjectProperty rdf:about="&herder;R2i_war_Vorlage_für">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P32i_was_technique_of"/>
+        <rdfs:range rdf:resource="&herder;H1_Aktion"/>
+        <rdfs:domain rdf:resource="&herder;H7_Aktionstyp"/>
+        <owl:inverseOf rdf:resource="&herder;R2_benutzte_Vorlage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R30_has_language -->
+
+    <owl:ObjectProperty rdf:about="&herder;R30_has_language">
+        <rdfs:domain rdf:resource="&ecrm;E41_Appellation"/>
+        <rdfs:range rdf:resource="&ecrm;E56_Language"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2_has_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R30i_is_language_of -->
+
+    <owl:ObjectProperty rdf:about="&herder;R30i_is_language_of">
+        <rdfs:range rdf:resource="&ecrm;E41_Appellation"/>
+        <rdfs:domain rdf:resource="&ecrm;E56_Language"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2i_is_type_of"/>
+        <owl:inverseOf rdf:resource="&herder;R30_has_language"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R31_has_title -->
+
+    <owl:ObjectProperty rdf:about="&herder;R31_has_title">
+        <mappingGuideline xml:lang="en">chml:titleSet
+
+This is not subclass of P102_has_title but merely subclass of P1_is_identified_by as the title(Set) element includes appellations
+that are not titles in the sense of the CRM (ie. words of human language), eg. signatures.</mappingGuideline>
+        <rdfs:domain rdf:resource="&ecrm;E71_Man-Made_Thing"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P1_is_identified_by"/>
+        <rdfs:range rdf:resource="&herder;H76_Title"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R31i_is_title_of -->
+
+    <owl:ObjectProperty rdf:about="&herder;R31i_is_title_of">
+        <rdfs:range rdf:resource="&ecrm;E71_Man-Made_Thing"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P1i_identifies"/>
+        <rdfs:domain rdf:resource="&herder;H76_Title"/>
+        <owl:inverseOf rdf:resource="&herder;R31_has_title"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R32_has_preferred_appellation -->
+
+    <owl:ObjectProperty rdf:about="&herder;R32_has_preferred_appellation">
+        <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:range rdf:resource="&ecrm;E41_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P1_is_identified_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R32i_is_preferred_appellation_of -->
+
+    <owl:ObjectProperty rdf:about="&herder;R32i_is_preferred_appellation_of">
+        <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:domain rdf:resource="&ecrm;E41_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P1i_identifies"/>
+        <owl:inverseOf rdf:resource="&herder;R32_has_preferred_appellation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R33_assigned_topic_to -->
+
+    <owl:ObjectProperty rdf:about="&herder;R33_assigned_topic_to">
+        <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P140_assigned_attribute_to"/>
+        <rdfs:domain rdf:resource="&herder;H78_Topic_Assignment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R33i_was_assigned_topic_by -->
+
+    <owl:ObjectProperty rdf:about="&herder;R33i_was_assigned_topic_by">
+        <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P140i_was_attributed_by"/>
+        <rdfs:range rdf:resource="&herder;H78_Topic_Assignment"/>
+        <owl:inverseOf rdf:resource="&herder;R33_assigned_topic_to"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R34_assigned_topic -->
+
+    <owl:ObjectProperty rdf:about="&herder;R34_assigned_topic">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P141_assigned"/>
+        <rdfs:domain rdf:resource="&herder;H78_Topic_Assignment"/>
+        <rdfs:range rdf:resource="&herder;H79_Topic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R34i_was_assigned_as_topic_by -->
+
+    <owl:ObjectProperty rdf:about="&herder;R34i_was_assigned_as_topic_by">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P141i_was_assigned_by"/>
+        <rdfs:range rdf:resource="&herder;H78_Topic_Assignment"/>
+        <rdfs:domain rdf:resource="&herder;H79_Topic"/>
+        <owl:inverseOf rdf:resource="&herder;R34_assigned_topic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R3_behandelte -->
+
+    <owl:ObjectProperty rdf:about="&herder;R3_behandelte">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P16_used_specific_object"/>
+        <rdfs:domain rdf:resource="&herder;H1_Aktion"/>
+        <rdfs:range rdf:resource="&herder;H5_Materielles_Objekt"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R3i_wurde_behandelt_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R3i_wurde_behandelt_in">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P16i_was_used_for"/>
+        <rdfs:range rdf:resource="&herder;H1_Aktion"/>
+        <rdfs:domain rdf:resource="&herder;H5_Materielles_Objekt"/>
+        <owl:inverseOf rdf:resource="&herder;R3_behandelte"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R4_documents -->
+
+    <owl:ObjectProperty rdf:about="&herder;R4_documents">
+        <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P67_refers_to"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P70_documents"/>
+        <rdfs:domain rdf:resource="&herder;H4_Quelle"/>
+        <owl:inverseOf rdf:resource="&herder;R4i_ist_erwaehnt_in"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R4i_ist_erwaehnt_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R4i_ist_erwaehnt_in">
+        <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P67i_is_referred_to_by"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P70i_is_documented_in"/>
+        <rdfs:range rdf:resource="&herder;H4_Quelle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R5_erschuf -->
+
+    <owl:ObjectProperty rdf:about="&herder;R5_erschuf">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P94_has_created"/>
+        <rdfs:domain rdf:resource="&herder;H16_Erschaffung"/>
+        <rdfs:range rdf:resource="&herder;H17_Immaterielles_Objekt"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R5i_wurde_erschaffen_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R5i_wurde_erschaffen_in">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P94i_was_created_by"/>
+        <rdfs:range rdf:resource="&herder;H16_Erschaffung"/>
+        <rdfs:domain rdf:resource="&herder;H17_Immaterielles_Objekt"/>
+        <owl:inverseOf rdf:resource="&herder;R5_erschuf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R5r_erschuf -->
+
+    <owl:ObjectProperty rdf:about="&herder;R5r_erschuf">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P12_occurred_in_the_presence_of"/>
+        <rdfs:range rdf:resource="&herder;H17_Immaterielles_Objekt"/>
+        <rdfs:domain rdf:resource="&herder;H1_Aktion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R5ri_wurde_erschaffen_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R5ri_wurde_erschaffen_in">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P12i_was_present_at"/>
+        <rdfs:domain rdf:resource="&herder;H17_Immaterielles_Objekt"/>
+        <rdfs:range rdf:resource="&herder;H1_Aktion"/>
+        <owl:inverseOf rdf:resource="&herder;R5r_erschuf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R6_beschreibt -->
+
+    <owl:ObjectProperty rdf:about="&herder;R6_beschreibt">
+        <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P129_is_about"/>
+        <rdfs:domain rdf:resource="&herder;H24_Beschreibung"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R6i_wird_beschrieben_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R6i_wird_beschrieben_in">
+        <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P129i_is_subject_of"/>
+        <rdfs:range rdf:resource="&herder;H24_Beschreibung"/>
+        <owl:inverseOf rdf:resource="&herder;R6_beschreibt"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R7_hat_historischen_Namen -->
+
+    <owl:ObjectProperty rdf:about="&herder;R7_hat_historischen_Namen">
+        <rdfs:range rdf:resource="&ecrm;E48_Place_Name"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P87_is_identified_by"/>
+        <rdfs:domain rdf:resource="&herder;H30_Geographischer_Ort"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R7i_ist_historischer_Name_von -->
+
+    <owl:ObjectProperty rdf:about="&herder;R7i_ist_historischer_Name_von">
+        <rdfs:domain rdf:resource="&ecrm;E48_Place_Name"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P87i_identifies"/>
+        <rdfs:range rdf:resource="&herder;H30_Geographischer_Ort"/>
+        <owl:inverseOf rdf:resource="&herder;R7_hat_historischen_Namen"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R8_beinhaltet -->
+
+    <owl:ObjectProperty rdf:about="&herder;R8_beinhaltet">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P46_is_composed_of"/>
+        <rdfs:domain rdf:resource="&herder;H5_Materielles_Objekt"/>
+        <rdfs:range rdf:resource="&herder;H5_Materielles_Objekt"/>
+        <owl:inverseOf rdf:resource="&herder;R8i_ist_Teil_von"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R8i_ist_Teil_von -->
+
+    <owl:ObjectProperty rdf:about="&herder;R8i_ist_Teil_von">
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P46i_forms_part_of"/>
+        <rdfs:domain rdf:resource="&herder;H5_Materielles_Objekt"/>
+        <rdfs:range rdf:resource="&herder;H5_Materielles_Objekt"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R10_Zeitspanne_Ende -->
+
+    <owl:DatatypeProperty rdf:about="&herder;R10_Zeitspanne_Ende">
+        <rdfs:domain rdf:resource="&ecrm;E52_Time-Span"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/R9_Zeitspanne_Start -->
+
+    <owl:DatatypeProperty rdf:about="&herder;R9_Zeitspanne_Start">
+        <rdfs:domain rdf:resource="&ecrm;E52_Time-Span"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/E75_Provenienzereignis -->
+
+    <owl:Class rdf:about="&herder;E75_Provenienzereignis">
+        <rdfs:subClassOf rdf:resource="&ecrm;E5_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H10_Personentyp -->
+
+    <owl:Class rdf:about="&herder;H10_Personentyp">
+        <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H11_Ereignistyp -->
+
+    <owl:Class rdf:about="&herder;H11_Ereignistyp">
+        <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H12_Typ_juristischer_Personen -->
+
+    <owl:Class rdf:about="&herder;H12_Typ_juristischer_Personen">
+        <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H13_Juristische_Person -->
+
+    <owl:Class rdf:about="&herder;H13_Juristische_Person">
+        <rdfs:subClassOf rdf:resource="&ecrm;E40_Legal_Body"/>
+        <rdfs:subClassOf rdf:resource="&herder;H19_Akteur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H14_Natuerliche_Person -->
+
+    <owl:Class rdf:about="&herder;H14_Natuerliche_Person">
+        <rdfs:subClassOf rdf:resource="&ecrm;E21_Person"/>
+        <rdfs:subClassOf rdf:resource="&herder;H19_Akteur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H15_Protokollerstellung -->
+
+    <owl:Class rdf:about="&herder;H15_Protokollerstellung">
+        <rdfs:subClassOf rdf:resource="&ecrm;E65_Creation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H16_Erschaffung -->
+
+    <owl:Class rdf:about="&herder;H16_Erschaffung">
+        <rdfs:subClassOf rdf:resource="&ecrm;E65_Creation"/>
+        <rdfs:subClassOf rdf:resource="&herder;H1_Aktion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H17_Immaterielles_Objekt -->
+
+    <owl:Class rdf:about="&herder;H17_Immaterielles_Objekt">
+        <rdfs:subClassOf rdf:resource="&ecrm;E28_Conceptual_Object"/>
+        <rdfs:subClassOf rdf:resource="&herder;H18_Gegenstand"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H18_Gegenstand -->
+
+    <owl:Class rdf:about="&herder;H18_Gegenstand">
+        <rdfs:subClassOf rdf:resource="&ecrm;E71_Man-Made_Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H19_Akteur -->
+
+    <owl:Class rdf:about="&herder;H19_Akteur">
+        <rdfs:subClassOf rdf:resource="&ecrm;E39_Actor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H1_Aktion -->
+
+    <owl:Class rdf:about="&herder;H1_Aktion">
+        <rdfs:subClassOf rdf:resource="&ecrm;E7_Activity"/>
+        <owl:disjointWith rdf:resource="&herder;H20_Ereignis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H20_Ereignis -->
+
+    <owl:Class rdf:about="&herder;H20_Ereignis">
+        <rdfs:subClassOf rdf:resource="&ecrm;E5_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H21_Text -->
+
+    <owl:Class rdf:about="&herder;H21_Text">
+        <rdfs:subClassOf rdf:resource="&ecrm;E33_Linguistic_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H23_ID -->
+
+    <owl:Class rdf:about="&herder;H23_ID">
+        <rdfs:subClassOf rdf:resource="&ecrm;E42_Identifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H24_Beschreibung -->
+
+    <owl:Class rdf:about="&herder;H24_Beschreibung">
+        <rdfs:subClassOf rdf:resource="&herder;H21_Text"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H25_URL -->
+
+    <owl:Class rdf:about="&herder;H25_URL">
+        <rdfs:subClassOf rdf:resource="&ecrm;E51_Contact_Point"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H26_OSM_ID -->
+
+    <owl:Class rdf:about="&herder;H26_OSM_ID">
+        <rdfs:subClassOf rdf:resource="&herder;H23_ID"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H27_Herstellung -->
+
+    <owl:Class rdf:about="&herder;H27_Herstellung">
+        <rdfs:subClassOf rdf:resource="&ecrm;E12_Production"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H28_Fuzzy_Date -->
+
+    <owl:Class rdf:about="&herder;H28_Fuzzy_Date">
+        <rdfs:subClassOf rdf:resource="&ecrm;E49_Time_Appellation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H29_Periode -->
+
+    <owl:Class rdf:about="&herder;H29_Periode">
+        <rdfs:subClassOf rdf:resource="&ecrm;E4_Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H2_Protokoll -->
+
+    <owl:Class rdf:about="&herder;H2_Protokoll">
+        <rdfs:subClassOf rdf:resource="&ecrm;E31_Document"/>
+        <rdfs:subClassOf rdf:resource="&herder;H21_Text"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H30_Geographischer_Ort -->
+
+    <owl:Class rdf:about="&herder;H30_Geographischer_Ort">
+        <rdfs:subClassOf rdf:resource="&ecrm;E53_Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H36_2D-Bild -->
+
+    <owl:Class rdf:about="&herder;H36_2D-Bild">
+        <rdfs:subClassOf rdf:resource="&ecrm;E38_Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H37_Animal -->
+
+    <owl:Class rdf:about="&herder;H37_Animal">
+        <rdfs:subClassOf rdf:resource="&herder;H8_Objekttyp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H38_Exterior -->
+
+    <owl:Class rdf:about="&herder;H38_Exterior">
+        <rdfs:subClassOf rdf:resource="&herder;H8_Objekttyp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H39_Facade -->
+
+    <owl:Class rdf:about="&herder;H39_Facade">
+        <rdfs:subClassOf rdf:resource="&herder;H8_Objekttyp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H3_3D-Rekonstruktion -->
+
+    <owl:Class rdf:about="&herder;H3_3D-Rekonstruktion">
+        <rdfs:subClassOf rdf:resource="&ecrm;E36_Visual_Item"/>
+        <rdfs:subClassOf rdf:resource="&herder;H17_Immaterielles_Objekt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H40_Furniture -->
+
+    <owl:Class rdf:about="&herder;H40_Furniture">
+        <rdfs:subClassOf rdf:resource="&herder;H8_Objekttyp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H41_Interior -->
+
+    <owl:Class rdf:about="&herder;H41_Interior">
+        <rdfs:subClassOf rdf:resource="&herder;H8_Objekttyp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H42_Structural -->
+
+    <owl:Class rdf:about="&herder;H42_Structural">
+        <rdfs:subClassOf rdf:resource="&herder;H8_Objekttyp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H43_Webseite -->
+
+    <owl:Class rdf:about="&herder;H43_Webseite">
+        <rdfs:subClassOf rdf:resource="&ecrm;E73_Information_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H44_Wikipedia-Artikel -->
+
+    <owl:Class rdf:about="&herder;H44_Wikipedia-Artikel">
+        <rdfs:subClassOf rdf:resource="&ecrm;E33_Linguistic_Object"/>
+        <rdfs:subClassOf rdf:resource="&herder;H43_Webseite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H45_ISBN -->
+
+    <owl:Class rdf:about="&herder;H45_ISBN">
+        <rdfs:subClassOf rdf:resource="&ecrm;E42_Identifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H46_Equipment -->
+
+    <owl:Class rdf:about="&herder;H46_Equipment">
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H47_GND_ID -->
+
+    <owl:Class rdf:about="&herder;H47_GND_ID">
+        <rdfs:subClassOf rdf:resource="&herder;H23_ID"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H48_Geschlecht -->
+
+    <owl:Class rdf:about="&herder;H48_Geschlecht">
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H49_Publikation -->
+
+    <owl:Class rdf:about="&herder;H49_Publikation">
+        <rdfs:subClassOf rdf:resource="&ecrm;E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="&herder;H17_Immaterielles_Objekt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H4_Quelle -->
+
+    <owl:Class rdf:about="&herder;H4_Quelle">
+        <rdfs:subClassOf rdf:resource="&ecrm;E31_Document"/>
+        <rdfs:subClassOf rdf:resource="&herder;H17_Immaterielles_Objekt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H50_Veroeffentlichung -->
+
+    <owl:Class rdf:about="&herder;H50_Veroeffentlichung">
+        <rdfs:subClassOf rdf:resource="&ecrm;E7_Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H51_Nationalitaet -->
+
+    <owl:Class rdf:about="&herder;H51_Nationalitaet">
+        <rdfs:subClassOf rdf:resource="&ecrm;E74_Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H52_Zugehoerigkeit -->
+
+    <owl:Class rdf:about="&herder;H52_Zugehoerigkeit">
+        <rdfs:subClassOf rdf:resource="&ecrm;E4_Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H53_Hausnummer -->
+
+    <owl:Class rdf:about="&herder;H53_Hausnummer">
+        <rdfs:subClassOf rdf:resource="&ecrm;E45_Address"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H54_PLZ -->
+
+    <owl:Class rdf:about="&herder;H54_PLZ">
+        <rdfs:subClassOf rdf:resource="&ecrm;E45_Address"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H55_Strasse -->
+
+    <owl:Class rdf:about="&herder;H55_Strasse">
+        <rdfs:subClassOf rdf:resource="&ecrm;E45_Address"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H56_E-Mail-Adresse -->
+
+    <owl:Class rdf:about="&herder;H56_E-Mail-Adresse">
+        <rdfs:subClassOf rdf:resource="&ecrm;E51_Contact_Point"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H57_Telefonnummer -->
+
+    <owl:Class rdf:about="&herder;H57_Telefonnummer">
+        <rdfs:subClassOf rdf:resource="&ecrm;E51_Contact_Point"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H58_Fax-Nummer -->
+
+    <owl:Class rdf:about="&herder;H58_Fax-Nummer">
+        <rdfs:subClassOf rdf:resource="&ecrm;E51_Contact_Point"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H59_Mobilfunknummer -->
+
+    <owl:Class rdf:about="&herder;H59_Mobilfunknummer">
+        <rdfs:subClassOf rdf:resource="&herder;H57_Telefonnummer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H5_Materielles_Objekt -->
+
+    <owl:Class rdf:about="&herder;H5_Materielles_Objekt">
+        <rdfs:subClassOf rdf:resource="&ecrm;E22_Man-Made_Object"/>
+        <rdfs:subClassOf rdf:resource="&herder;H18_Gegenstand"/>
+        <mappingGuideline xml:lang="en">chml:objectType
+
+Every object is modelled as physical object even if it is not clear if it really existed.
+The underlying assumption is that an object has
+sufficient backing sources, otherwise it wouldn&apos;t be chosen for reconstruction 
+
+From that follows that the the element semanticObjectRelations and physicalObject
+have no counterpart.
+
+Slots:
+@ID: the URI of the individual
+@type: ecrm:P2_has_type -&gt; herder:H8_Objekttyp
+@signatureRoom: (Marzsynski nr?) ecrm:P48_has_preferred_identifier -&gt; herder:H74_Zimmernummer
+
+entry: ecrm:P140i_was_attributed_by -&gt; ecrm:E13_Attribute_Assignment
+
+titleSet: ecrm:P102_has_title -&gt; herder:H22_Titel
+titleSet/title: ecrm:P102_has_title -&gt; herder:H22_Titel -&gt; ecrm:P3_has_note
+titleSet/title/@lang: ecrm:P102_has_title -&gt; H22_Titel -&gt; P72 has language -&gt; E56 Language
+titleSet/title/@sourceID: ? what is the difference between sourceID and href ?
+titleSet/title/@sourceType: ? what is a sourceType? A CHML type?
+titleSet/title/@href: see above
+
+semanticObjectRelations/isPartOfObject/relObject: herder:R8i_ist Teil_von -&gt; herder:H5_Materielles_Objekt
+semanticObjectRelations/objectHasParts/relObject: herder:R8_beinhaltet -&gt; herder:H5_Materielles_Objekt
+semanticObjectRelations/isSimilarToObject/relObject: herder:R27_is_similar_to herder:H5_Materielles_Objekt
+semanticObjectRelations/isShownBy/relSource: herder:R26i_wird_abgebildet_in -&gt; herder:H4_Quelle
+
+Note: Why is there a @signatureRoom in the relSource element?
+
+physicalObject/objectProvenance: todo
+physicalObject/objectHistory: todo
+physicalObject/objectDescription: todo
+
+objectReconstruction:  ecrm:P138i_has_representation -&gt; herder:H3_3D-Rekonstruktion
+
+
+Note: in modelGeometryType there is a superfluous choice construct</mappingGuideline>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H60_Methode -->
+
+    <owl:Class rdf:about="&herder;H60_Methode">
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H61_Technik -->
+
+    <owl:Class rdf:about="&herder;H61_Technik">
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H62_GML_Point -->
+
+    <owl:Class rdf:about="&herder;H62_GML_Point">
+        <rdfs:subClassOf rdf:resource="&ecrm;E42_Identifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H65_Lizenz -->
+
+    <owl:Class rdf:about="&herder;H65_Lizenz">
+        <rdfs:subClassOf rdf:resource="&ecrm;E30_Right"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H66_Zugriffsrecht -->
+
+    <owl:Class rdf:about="&herder;H66_Zugriffsrecht">
+        <rdfs:subClassOf rdf:resource="&ecrm;E30_Right"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H67_Reproduktionsrecht -->
+
+    <owl:Class rdf:about="&herder;H67_Reproduktionsrecht">
+        <rdfs:subClassOf rdf:resource="&ecrm;E30_Right"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H68_Credit_Line -->
+
+    <owl:Class rdf:about="&herder;H68_Credit_Line">
+        <rdfs:subClassOf rdf:resource="&ecrm;E30_Right"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H69_Zustoerung -->
+
+    <owl:Class rdf:about="&herder;H69_Zustoerung">
+        <rdfs:subClassOf rdf:resource="&ecrm;E6_Destruction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H6_CHML_Type -->
+
+    <owl:Class rdf:about="&herder;H6_CHML_Type">
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H70_Messgroesse -->
+
+    <owl:Class rdf:about="&herder;H70_Messgroesse">
+        <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
+        <rdfs:comment>die deutsche Bezeichnung ist entnommen aus http://de.wikipedia.org/wiki/Messgr%C3%B6%C3%9Fe</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H71_Mass -->
+
+    <owl:Class rdf:about="&herder;H71_Mass">
+        <rdfs:subClassOf rdf:resource="&ecrm;E54_Dimension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H72_Ziel_einer_Aktion -->
+
+    <owl:Class rdf:about="&herder;H72_Ziel_einer_Aktion">
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H73_Himmelsrichtung -->
+
+    <owl:Class rdf:about="&herder;H73_Himmelsrichtung">
+        <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H76_Title -->
+
+    <owl:Class rdf:about="&herder;H76_Title">
+        <rdfs:subClassOf rdf:resource="&ecrm;E41_Appellation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H77_Inventory_Number -->
+
+    <owl:Class rdf:about="&herder;H77_Inventory_Number">
+        <rdfs:subClassOf rdf:resource="&ecrm;E42_Identifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H78_Topic_Assignment -->
+
+    <owl:Class rdf:about="&herder;H78_Topic_Assignment">
+        <rdfs:subClassOf rdf:resource="&ecrm;E13_Attribute_Assignment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H79_Topic -->
+
+    <owl:Class rdf:about="&herder;H79_Topic">
+        <rdfs:subClassOf rdf:resource="&ecrm;E89_Propositional_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H7_Aktionstyp -->
+
+    <owl:Class rdf:about="&herder;H7_Aktionstyp">
+        <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H8_Objekttyp -->
+
+    <owl:Class rdf:about="&herder;H8_Objekttyp">
+        <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/H9_Quellentyp -->
+
+    <owl:Class rdf:about="&herder;H9_Quellentyp">
+        <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wisski.cs.fau.de/herder-test/content/E42_Identifier_de -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_de">
+        <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
+        <ecrm:P3_has_note>DE</ecrm:P3_has_note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wisski.cs.fau.de/herder-test/content/E42_Identifier_en -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_en">
+        <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
+        <ecrm:P3_has_note> EN</ecrm:P3_has_note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wisski.cs.fau.de/herder-test/content/E42_Identifier_la -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_la">
+        <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
+        <ecrm:P3_has_note>LA</ecrm:P3_has_note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wisski.cs.fau.de/herder-test/content/E42_Identifier_marznr -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_marznr">
+        <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
+        <ecrm:P3_has_note>Marzyński</ecrm:P3_has_note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wisski.cs.fau.de/herder-test/content/E42_Identifier_pl -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_pl">
+        <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
+        <ecrm:P3_has_note>PL</ecrm:P3_has_note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wisski.cs.fau.de/herder-test/content/E42_Identifier_ru -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_ru">
+        <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
+        <ecrm:P3_has_note>RU</ecrm:P3_has_note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wisski.cs.fau.de/herder-test/content/E56_Language_de -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_de">
+        <rdf:type rdf:resource="&ecrm;E56_Language"/>
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_de"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wisski.cs.fau.de/herder-test/content/E56_Language_en -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_en">
+        <rdf:type rdf:resource="&ecrm;E56_Language"/>
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_en"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wisski.cs.fau.de/herder-test/content/E56_Language_la -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_la">
+        <rdf:type rdf:resource="&ecrm;E56_Language"/>
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_la"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wisski.cs.fau.de/herder-test/content/E56_Language_pl -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_pl">
+        <rdf:type rdf:resource="&ecrm;E56_Language"/>
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_pl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wisski.cs.fau.de/herder-test/content/E56_Language_ru -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_ru">
+        <rdf:type rdf:resource="&ecrm;E56_Language"/>
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_ru"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wisski.cs.fau.de/herder-test/content/H75_Encoding_marznr -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;H75_Encoding_marznr">
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_marznr"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="&ecrm;P143_joined">
+        <rdfs:comment>This is a shortcut for H19_Akteur -&gt; P143 joined -&gt; E85 Joining -&gt; R22 beginnt -&gt; H52 Zugehoerigkeit</rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
