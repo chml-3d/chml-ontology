@@ -27,6 +27,8 @@
 - Anpassungen an CHML 0.9:
 - Sprachabhängige Text/Appell-Klassen verworfen
 - Erstellen von Annotationen zum OWL-CHML-Mapping</rdfs:comment>
+        <rdfs:comment xml:lang="de">141027 (Martin Scholz):
+This ontology is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License</rdfs:comment>
         <owl:imports rdf:resource="http://erlangen-crm.org/140617/"/>
     </owl:Ontology>
     
