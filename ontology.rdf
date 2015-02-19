@@ -1386,9 +1386,9 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
     
 
 
-    <!-- http://chml.foundation/ontology/H71_Mass -->
+    <!-- http://chml.foundation/ontology/H71_Measure -->
 
-    <owl:Class rdf:about="&herder;H71_Mass">
+    <owl:Class rdf:about="&herder;H71_Measure">
         <rdfs:subClassOf rdf:resource="&ecrm;E54_Dimension"/>
     </owl:Class>
     
