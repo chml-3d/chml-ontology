@@ -8,7 +8,7 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY content "http://www.patrimonium.net/content/" >
+    <!ENTITY herder-inst "http://www.patrimonium.net/content/" >
 ]>
 
 
@@ -16,7 +16,7 @@
      xml:base="http://wwwdh.cs.fau.de/ontologies/herder-test/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:ecrm="http://erlangen-crm.org/140617/"
-     xmlns:content="http://www.patrimonium.net/content/"
+     xmlns:herder-inst="http://www.patrimonium.net/content/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:herder="http://chml.foundation/ontology/"
@@ -1623,109 +1623,109 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
     
 
 
-    <!-- http://wisski.cs.fau.de/herder-test/content/E42_Identifier_de -->
+    <!-- http://www.patrimonium.net/content/E42_Identifier_de -->
 
-    <owl:NamedIndividual rdf:about="&content;E42_Identifier_de">
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_de">
         <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
         <ecrm:P3_has_note>DE</ecrm:P3_has_note>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://wisski.cs.fau.de/herder-test/content/E42_Identifier_en -->
+    <!-- http://www.patrimonium.net/content/E42_Identifier_en -->
 
-    <owl:NamedIndividual rdf:about="&content;E42_Identifier_en">
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_en">
         <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
         <ecrm:P3_has_note> EN</ecrm:P3_has_note>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://wisski.cs.fau.de/herder-test/content/E42_Identifier_la -->
+    <!-- http://www.patrimonium.net/content/E42_Identifier_la -->
 
-    <owl:NamedIndividual rdf:about="&content;E42_Identifier_la">
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_la">
         <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
         <ecrm:P3_has_note>LA</ecrm:P3_has_note>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://wisski.cs.fau.de/herder-test/content/E42_Identifier_marznr -->
+    <!-- http://www.patrimonium.net/content/E42_Identifier_marznr -->
 
-    <owl:NamedIndividual rdf:about="&content;E42_Identifier_marznr">
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_marznr">
         <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
         <ecrm:P3_has_note>Marzyński</ecrm:P3_has_note>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://wisski.cs.fau.de/herder-test/content/E42_Identifier_pl -->
+    <!-- http://www.patrimonium.net/content/E42_Identifier_pl -->
 
-    <owl:NamedIndividual rdf:about="&content;E42_Identifier_pl">
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_pl">
         <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
         <ecrm:P3_has_note>PL</ecrm:P3_has_note>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://wisski.cs.fau.de/herder-test/content/E42_Identifier_ru -->
+    <!-- http://www.patrimonium.net/content/E42_Identifier_ru -->
 
-    <owl:NamedIndividual rdf:about="&content;E42_Identifier_ru">
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_ru">
         <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
         <ecrm:P3_has_note>RU</ecrm:P3_has_note>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://wisski.cs.fau.de/herder-test/content/E56_Language_de -->
+    <!-- http://www.patrimonium.net/content/E56_Language_de -->
 
-    <owl:NamedIndividual rdf:about="&content;E56_Language_de">
+    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_de">
         <rdf:type rdf:resource="&ecrm;E56_Language"/>
-        <ecrm:P48_has_preferred_identifier rdf:resource="&content;E42_Identifier_de"/>
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_de"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://wisski.cs.fau.de/herder-test/content/E56_Language_en -->
+    <!-- http://www.patrimonium.net/content/E56_Language_en -->
 
-    <owl:NamedIndividual rdf:about="&content;E56_Language_en">
+    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_en">
         <rdf:type rdf:resource="&ecrm;E56_Language"/>
-        <ecrm:P48_has_preferred_identifier rdf:resource="&content;E42_Identifier_en"/>
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_en"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://wisski.cs.fau.de/herder-test/content/E56_Language_la -->
+    <!-- http://www.patrimonium.net/content/E56_Language_la -->
 
-    <owl:NamedIndividual rdf:about="&content;E56_Language_la">
+    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_la">
         <rdf:type rdf:resource="&ecrm;E56_Language"/>
-        <ecrm:P48_has_preferred_identifier rdf:resource="&content;E42_Identifier_la"/>
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_la"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://wisski.cs.fau.de/herder-test/content/E56_Language_pl -->
+    <!-- http://www.patrimonium.net/content/E56_Language_pl -->
 
-    <owl:NamedIndividual rdf:about="&content;E56_Language_pl">
+    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_pl">
         <rdf:type rdf:resource="&ecrm;E56_Language"/>
-        <ecrm:P48_has_preferred_identifier rdf:resource="&content;E42_Identifier_pl"/>
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_pl"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://wisski.cs.fau.de/herder-test/content/E56_Language_ru -->
+    <!-- http://www.patrimonium.net/content/E56_Language_ru -->
 
-    <owl:NamedIndividual rdf:about="&content;E56_Language_ru">
+    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_ru">
         <rdf:type rdf:resource="&ecrm;E56_Language"/>
-        <ecrm:P48_has_preferred_identifier rdf:resource="&content;E42_Identifier_ru"/>
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_ru"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://wisski.cs.fau.de/herder-test/content/H75_Encoding_marznr -->
+    <!-- http://www.patrimonium.net/content/H75_Encoding_marznr -->
 
-    <owl:NamedIndividual rdf:about="&content;H75_Encoding_marznr">
-        <ecrm:P48_has_preferred_identifier rdf:resource="&content;E42_Identifier_marznr"/>
+    <owl:NamedIndividual rdf:about="&herder-inst;H75_Encoding_marznr">
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_marznr"/>
     </owl:NamedIndividual>
     
 
