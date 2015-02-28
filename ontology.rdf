@@ -6,9 +6,9 @@
     <!ENTITY ecrm "http://erlangen-crm.org/140617/" >
     <!ENTITY herder "http://chml.foundation/ontology/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY herder-inst "http://www.patrimonium.net/content/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY herder-inst "http://www.patrimonium.net/content/" >
 ]>
 
 
@@ -644,8 +644,8 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/R37_has_min -->
 
     <owl:ObjectProperty rdf:about="&herder;R37_has_min">
-        <rdfs:domain rdf:resource="&herder;H84_Model_Geometry"/>
         <rdfs:range rdf:resource="&herder;H86_Geometry_Point"/>
+        <rdfs:domain rdf:resource="&herder;H92_Geometric_Object"/>
     </owl:ObjectProperty>
     
 
@@ -653,8 +653,8 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/R37i_is_min_of -->
 
     <owl:ObjectProperty rdf:about="&herder;R37i_is_min_of">
-        <rdfs:range rdf:resource="&herder;H84_Model_Geometry"/>
         <rdfs:domain rdf:resource="&herder;H86_Geometry_Point"/>
+        <rdfs:range rdf:resource="&herder;H92_Geometric_Object"/>
         <owl:inverseOf rdf:resource="&herder;R37_has_min"/>
     </owl:ObjectProperty>
     
@@ -663,8 +663,8 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/R38_has_max -->
 
     <owl:ObjectProperty rdf:about="&herder;R38_has_max">
-        <rdfs:domain rdf:resource="&herder;H84_Model_Geometry"/>
-        <rdfs:range rdf:resource="&herder;H86_Geometry_Point"/>
+        <rdfs:domain rdf:resource="&herder;H3_3D-Reconstruction"/>
+        <rdfs:range rdf:resource="&herder;H92_Geometric_Object"/>
         <owl:inverseOf rdf:resource="&herder;R38i_is_max_of"/>
     </owl:ObjectProperty>
     
@@ -673,8 +673,8 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/R38i_is_max_of -->
 
     <owl:ObjectProperty rdf:about="&herder;R38i_is_max_of">
-        <rdfs:range rdf:resource="&herder;H84_Model_Geometry"/>
         <rdfs:domain rdf:resource="&herder;H86_Geometry_Point"/>
+        <rdfs:range rdf:resource="&herder;H92_Geometric_Object"/>
     </owl:ObjectProperty>
     
 
@@ -682,8 +682,8 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/R39_has_insertion_point -->
 
     <owl:ObjectProperty rdf:about="&herder;R39_has_insertion_point">
-        <rdfs:domain rdf:resource="&herder;H84_Model_Geometry"/>
         <rdfs:range rdf:resource="&herder;H86_Geometry_Point"/>
+        <rdfs:domain rdf:resource="&herder;H92_Geometric_Object"/>
         <owl:inverseOf rdf:resource="&herder;R39i_is_insertion_point_of"/>
     </owl:ObjectProperty>
     
@@ -692,8 +692,8 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/R39i_is_insertion_point_of -->
 
     <owl:ObjectProperty rdf:about="&herder;R39i_is_insertion_point_of">
-        <rdfs:range rdf:resource="&herder;H84_Model_Geometry"/>
         <rdfs:domain rdf:resource="&herder;H86_Geometry_Point"/>
+        <rdfs:range rdf:resource="&herder;H92_Geometric_Object"/>
     </owl:ObjectProperty>
     
 
@@ -702,8 +702,8 @@ This property is used to link parent object (a model) to different variations of
 
     <owl:ObjectProperty rdf:about="&herder;R3_dealt_with">
         <rdfs:domain rdf:resource="&herder;H1_Action"/>
-        <rdfs:range rdf:resource="&herder;H5_Material_Object"/>
-        <rdfs:subPropertyOf rdf:resource="&ecrm;P16_used_specific_object"/>
+        <rdfs:range rdf:resource="&ecrm;E77_Persistent_Item"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P12_occurred_in_the_presence_of"/>
     </owl:ObjectProperty>
     
 
@@ -712,9 +712,69 @@ This property is used to link parent object (a model) to different variations of
 
     <owl:ObjectProperty rdf:about="&herder;R3i_was_dealt_with_in">
         <rdfs:range rdf:resource="&herder;H1_Action"/>
-        <rdfs:domain rdf:resource="&herder;H5_Material_Object"/>
         <owl:inverseOf rdf:resource="&herder;R3_dealt_with"/>
-        <rdfs:subPropertyOf rdf:resource="&ecrm;P16i_was_used_for"/>
+        <rdfs:domain rdf:resource="&ecrm;E77_Persistent_Item"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P12i_was_present_at"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R41_has_boundary -->
+
+    <owl:ObjectProperty rdf:about="&herder;R41_has_boundary">
+        <rdfs:range rdf:resource="&herder;H92_Geometric_Object"/>
+        <rdfs:domain rdf:resource="&herder;H92_Geometric_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R41i_is_boundary_of -->
+
+    <owl:ObjectProperty rdf:about="&herder;R41i_is_boundary_of">
+        <rdfs:range rdf:resource="&herder;H92_Geometric_Object"/>
+        <rdfs:domain rdf:resource="&herder;H92_Geometric_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R42_destroyed -->
+
+    <owl:ObjectProperty rdf:about="&herder;R42_destroyed">
+        <rdfs:domain rdf:resource="&herder;H1_Action"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R3_dealt_with"/>
+        <rdfs:range rdf:resource="&ecrm;E77_Persistent_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R42i_was_destroyed_by -->
+
+    <owl:ObjectProperty rdf:about="&herder;R42i_was_destroyed_by">
+        <rdfs:range rdf:resource="&herder;H1_Action"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R3i_was_dealt_with_in"/>
+        <owl:inverseOf rdf:resource="&herder;R42_destroyed"/>
+        <rdfs:domain rdf:resource="&ecrm;E77_Persistent_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R43_modified -->
+
+    <owl:ObjectProperty rdf:about="&herder;R43_modified">
+        <rdfs:domain rdf:resource="&herder;H1_Action"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R3_dealt_with"/>
+        <rdfs:range rdf:resource="&ecrm;E77_Persistent_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R43i_was_modified_by -->
+
+    <owl:ObjectProperty rdf:about="&herder;R43i_was_modified_by">
+        <rdfs:range rdf:resource="&herder;H1_Action"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R3i_was_dealt_with_in"/>
+        <owl:inverseOf rdf:resource="&herder;R43_modified"/>
+        <rdfs:domain rdf:resource="&ecrm;E77_Persistent_Item"/>
     </owl:ObjectProperty>
     
 
@@ -746,8 +806,8 @@ This property is used to link parent object (a model) to different variations of
 
     <owl:ObjectProperty rdf:about="&herder;R5_created">
         <rdfs:domain rdf:resource="&herder;H1_Action"/>
-        <rdfs:range rdf:resource="&herder;H17_Immaterial_Object"/>
-        <rdfs:subPropertyOf rdf:resource="&ecrm;P94_has_created"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R3_dealt_with"/>
+        <rdfs:range rdf:resource="&ecrm;E77_Persistent_Item"/>
     </owl:ObjectProperty>
     
 
@@ -756,9 +816,9 @@ This property is used to link parent object (a model) to different variations of
 
     <owl:ObjectProperty rdf:about="&herder;R5i_was_created_by">
         <rdfs:range rdf:resource="&herder;H1_Action"/>
-        <rdfs:domain rdf:resource="&herder;H17_Immaterial_Object"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R3i_was_dealt_with_in"/>
         <owl:inverseOf rdf:resource="&herder;R5_created"/>
-        <rdfs:subPropertyOf rdf:resource="&ecrm;P94i_was_created_by"/>
+        <rdfs:domain rdf:resource="&ecrm;E77_Persistent_Item"/>
     </owl:ObjectProperty>
     
 
@@ -861,6 +921,14 @@ This property is used to link parent object (a model) to different variations of
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://chml.foundation/ontology/H100_Coordinate_System_Type -->
+
+    <owl:Class rdf:about="&herder;H100_Coordinate_System_Type">
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+    </owl:Class>
     
 
 
@@ -1082,6 +1150,7 @@ This property is used to link parent object (a model) to different variations of
 
     <owl:Class rdf:about="&herder;H3_3D-Reconstruction">
         <rdfs:subClassOf rdf:resource="&herder;H17_Immaterial_Object"/>
+        <rdfs:subClassOf rdf:resource="&herder;H92_Geometric_Object"/>
         <rdfs:subClassOf rdf:resource="&ecrm;E36_Visual_Item"/>
     </owl:Class>
     
@@ -1482,9 +1551,9 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
     
 
 
-    <!-- http://chml.foundation/ontology/H84_Model_Geometry -->
+    <!-- http://chml.foundation/ontology/H84_Bounding_Box -->
 
-    <owl:Class rdf:about="&herder;H84_Model_Geometry">
+    <owl:Class rdf:about="&herder;H84_Bounding_Box">
         <rdfs:subClassOf rdf:resource="&herder;H92_Geometric_Object"/>
     </owl:Class>
     
@@ -1591,16 +1660,23 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
     <owl:Class rdf:about="&herder;H97_DOI">
         <rdfs:subClassOf rdf:resource="&ecrm;E42_Identifier"/>
     </owl:Class>
-	
-	
-	
-	<!-- http://chml.foundation/ontology/H98_Provenance_Creation_Action -->
+    
+
+
+    <!-- http://chml.foundation/ontology/H98_Provenance_Creation_Action -->
 
     <owl:Class rdf:about="&herder;H98_Provenance_Creation_Action">
+        <rdfs:subClassOf rdf:resource="&herder;H16_Creation_Action"/>
         <rdfs:subClassOf rdf:resource="&herder;H74_Provenance_Event"/>
-		<rdfs:subClassOf rdf:resource="&herder;H16_Creation_Action"/>
     </owl:Class>
+    
 
+
+    <!-- http://chml.foundation/ontology/H99_Geometric_Precision -->
+
+    <owl:Class rdf:about="&herder;H99_Geometric_Precision">
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+    </owl:Class>
     
 
 
