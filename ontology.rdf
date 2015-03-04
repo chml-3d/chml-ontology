@@ -117,6 +117,8 @@ This ontology is licensed under a Creative Commons Attribution-ShareAlike 3.0 Un
     <!-- http://chml.foundation/ontology/R13_has_name -->
 
     <owl:ObjectProperty rdf:about="&herder;R13_has_name">
+        <rdfs:domain rdf:resource="&herder;H14_Natural_Person"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P131_is_identified_by"/>
     </owl:ObjectProperty>
     
@@ -136,6 +138,8 @@ This ontology is licensed under a Creative Commons Attribution-ShareAlike 3.0 Un
     <!-- http://chml.foundation/ontology/R14_has_official_title -->
 
     <owl:ObjectProperty rdf:about="&herder;R14_has_official_title">
+        <rdfs:domain rdf:resource="&herder;H14_Natural_Person"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P131_is_identified_by"/>
     </owl:ObjectProperty>
     
@@ -155,6 +159,8 @@ This ontology is licensed under a Creative Commons Attribution-ShareAlike 3.0 Un
     <!-- http://chml.foundation/ontology/R15_has_degree -->
 
     <owl:ObjectProperty rdf:about="&herder;R15_has_degree">
+        <rdfs:domain rdf:resource="&herder;H14_Natural_Person"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P131_is_identified_by"/>
     </owl:ObjectProperty>
     
@@ -779,6 +785,86 @@ This property is used to link parent object (a model) to different variations of
     
 
 
+    <!-- http://chml.foundation/ontology/R44_existed_during -->
+
+    <owl:ObjectProperty rdf:about="&herder;R44_existed_during">
+        <rdfs:range rdf:resource="&ecrm;E52_Time-Span"/>
+        <rdfs:domain rdf:resource="&ecrm;E77_Persistent_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R44i_marks_existence_of -->
+
+    <owl:ObjectProperty rdf:about="&herder;R44i_marks_existence_of">
+        <owl:inverseOf rdf:resource="&herder;R44_existed_during"/>
+        <rdfs:domain rdf:resource="&ecrm;E52_Time-Span"/>
+        <rdfs:range rdf:resource="&ecrm;E77_Persistent_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R45_can_have_part -->
+
+    <owl:ObjectProperty rdf:about="&herder;R45_can_have_part">
+        <rdfs:domain rdf:resource="&herder;H6_CHML_Type"/>
+        <rdfs:range rdf:resource="&herder;H6_CHML_Type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R45i_can_be_part_of -->
+
+    <owl:ObjectProperty rdf:about="&herder;R45i_can_be_part_of">
+        <rdfs:range rdf:resource="&herder;H6_CHML_Type"/>
+        <rdfs:domain rdf:resource="&herder;H6_CHML_Type"/>
+        <owl:inverseOf rdf:resource="&herder;R45_can_have_part"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R46_contains_birth_surname -->
+
+    <owl:ObjectProperty rdf:about="&herder;R46_contains_birth_surname">
+        <rdfs:subPropertyOf rdf:resource="&herder;R17_contains_surname"/>
+        <owl:inverseOf rdf:resource="&herder;R46i_is_birth_surname_in"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R46i_is_birth_surname_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R46i_is_birth_surname_in">
+        <rdfs:subPropertyOf rdf:resource="&herder;R17i_is_surname_in"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R47_has_name_translation -->
+
+    <owl:ObjectProperty rdf:about="&herder;R47_has_name_translation">
+        <rdfs:domain rdf:resource="&herder;H19_Actor"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131_is_identified_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R47i_is_name_translation_of -->
+
+    <owl:ObjectProperty rdf:about="&herder;R47i_is_name_translation_of">
+        <rdfs:range rdf:resource="&herder;H19_Actor"/>
+        <owl:inverseOf rdf:resource="&herder;R47_has_name_translation"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131i_identifies"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://chml.foundation/ontology/R4_documents -->
 
     <owl:ObjectProperty rdf:about="&herder;R4_documents">
@@ -928,6 +1014,14 @@ This property is used to link parent object (a model) to different variations of
 
     <owl:Class rdf:about="&herder;H100_Coordinate_System_Type">
         <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H101_Measured_Format -->
+
+    <owl:Class rdf:about="&herder;H101_Measured_Format">
+        <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
     </owl:Class>
     
 
@@ -1398,9 +1492,9 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
     
 
 
-    <!-- http://chml.foundation/ontology/H65_License -->
+    <!-- http://chml.foundation/ontology/H65_Europeana_License -->
 
-    <owl:Class rdf:about="&herder;H65_License">
+    <owl:Class rdf:about="&herder;H65_Europeana_License">
         <rdfs:subClassOf rdf:resource="&ecrm;E30_Right"/>
     </owl:Class>
     
