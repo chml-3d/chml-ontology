@@ -844,9 +844,9 @@ This property is used to link parent object (a model) to different variations of
     
 
 
-    <!-- http://chml.foundation/ontology/R47_has_name_translation -->
+    <!-- http://chml.foundation/ontology/R47_has_alternative_name -->
 
-    <owl:ObjectProperty rdf:about="&herder;R47_has_name_translation">
+    <owl:ObjectProperty rdf:about="&herder;R47_has_alternative_name">
         <rdfs:domain rdf:resource="&herder;H19_Actor"/>
         <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P131_is_identified_by"/>
@@ -854,13 +854,53 @@ This property is used to link parent object (a model) to different variations of
     
 
 
-    <!-- http://chml.foundation/ontology/R47i_is_name_translation_of -->
+    <!-- http://chml.foundation/ontology/R47i_is_alternative_name_of -->
 
-    <owl:ObjectProperty rdf:about="&herder;R47i_is_name_translation_of">
+    <owl:ObjectProperty rdf:about="&herder;R47i_is_alternative_name_of">
         <rdfs:range rdf:resource="&herder;H19_Actor"/>
-        <owl:inverseOf rdf:resource="&herder;R47_has_name_translation"/>
+        <owl:inverseOf rdf:resource="&herder;R47_has_alternative_name"/>
         <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P131i_identifies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R48_published -->
+
+    <owl:ObjectProperty rdf:about="&herder;R48_published">
+        <rdfs:domain rdf:resource="&herder;H50_Publication_Event"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R3_dealt_with"/>
+        <rdfs:range rdf:resource="&ecrm;E73_Information_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R48i_was_published_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R48i_was_published_in">
+        <rdfs:range rdf:resource="&herder;H50_Publication_Event"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R3i_was_dealt_with_in"/>
+        <owl:inverseOf rdf:resource="&herder;R48_published"/>
+        <rdfs:domain rdf:resource="&ecrm;E73_Information_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R49_has_virtual_location -->
+
+    <owl:ObjectProperty rdf:about="&herder;R49_has_virtual_location">
+        <rdfs:range rdf:resource="&herder;H104_Virtual_Place"/>
+        <owl:inverseOf rdf:resource="&herder;R49i_is_virtual_location_of"/>
+        <rdfs:domain rdf:resource="&ecrm;E77_Persistent_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R49i_is_virtual_location_of -->
+
+    <owl:ObjectProperty rdf:about="&herder;R49i_is_virtual_location_of">
+        <rdfs:domain rdf:resource="&herder;H104_Virtual_Place"/>
+        <rdfs:range rdf:resource="&ecrm;E77_Persistent_Item"/>
     </owl:ObjectProperty>
     
 
@@ -1021,6 +1061,62 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/H101_Measured_Format -->
 
     <owl:Class rdf:about="&herder;H101_Measured_Format">
+        <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H102_Access_Level -->
+
+    <owl:Class rdf:about="&herder;H102_Access_Level">
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H103_Geocoordinates -->
+
+    <owl:Class rdf:about="&herder;H103_Geocoordinates">
+        <rdfs:subClassOf rdf:resource="&ecrm;E47_Spatial_Coordinates"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H104_Virtual_Place -->
+
+    <owl:Class rdf:about="&herder;H104_Virtual_Place">
+        <rdfs:subClassOf rdf:resource="&ecrm;E53_Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H105_Image_Scene -->
+
+    <owl:Class rdf:about="&herder;H105_Image_Scene">
+        <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H106_Digital_Source_Type -->
+
+    <owl:Class rdf:about="&herder;H106_Digital_Source_Type">
+        <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H107_Personal_Relation_Type -->
+
+    <owl:Class rdf:about="&herder;H107_Personal_Relation_Type">
+        <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H108_Condition_State -->
+
+    <owl:Class rdf:about="&herder;H108_Condition_State">
         <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
     </owl:Class>
     
@@ -1323,15 +1419,6 @@ This property is used to link parent object (a model) to different variations of
     
 
 
-    <!-- http://chml.foundation/ontology/H49_Publication -->
-
-    <owl:Class rdf:about="&herder;H49_Publication">
-        <rdfs:subClassOf rdf:resource="&herder;H17_Immaterial_Object"/>
-        <rdfs:subClassOf rdf:resource="&ecrm;E73_Information_Object"/>
-    </owl:Class>
-    
-
-
     <!-- http://chml.foundation/ontology/H4_Source -->
 
     <owl:Class rdf:about="&herder;H4_Source">
@@ -1344,7 +1431,7 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/H50_Publication_Event -->
 
     <owl:Class rdf:about="&herder;H50_Publication_Event">
-        <rdfs:subClassOf rdf:resource="&ecrm;E7_Activity"/>
+        <rdfs:subClassOf rdf:resource="&herder;H1_Action"/>
     </owl:Class>
     
 
@@ -1753,15 +1840,6 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
 
     <owl:Class rdf:about="&herder;H97_DOI">
         <rdfs:subClassOf rdf:resource="&ecrm;E42_Identifier"/>
-    </owl:Class>
-    
-
-
-    <!-- http://chml.foundation/ontology/H98_Provenance_Creation_Action -->
-
-    <owl:Class rdf:about="&herder;H98_Provenance_Creation_Action">
-        <rdfs:subClassOf rdf:resource="&herder;H16_Creation_Action"/>
-        <rdfs:subClassOf rdf:resource="&herder;H74_Provenance_Event"/>
     </owl:Class>
     
 
