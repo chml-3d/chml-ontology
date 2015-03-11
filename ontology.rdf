@@ -266,7 +266,6 @@ This ontology is licensed under a Creative Commons Attribution-ShareAlike 3.0 Un
     <owl:ObjectProperty rdf:about="&herder;R1_reports">
         <rdfs:range rdf:resource="&herder;H1_Action"/>
         <rdfs:domain rdf:resource="&herder;H2_Report"/>
-        <rdfs:subPropertyOf rdf:resource="&herder;R4_documents"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P129_is_about"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P70_documents"/>
     </owl:ObjectProperty>
@@ -279,7 +278,6 @@ This ontology is licensed under a Creative Commons Attribution-ShareAlike 3.0 Un
         <rdfs:domain rdf:resource="&herder;H1_Action"/>
         <rdfs:range rdf:resource="&herder;H2_Report"/>
         <owl:inverseOf rdf:resource="&herder;R1_reports"/>
-        <rdfs:subPropertyOf rdf:resource="&herder;R4i_is_documented_in"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P129i_is_subject_of"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P70i_is_documented_in"/>
     </owl:ObjectProperty>
@@ -908,11 +906,10 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/R4_documents -->
 
     <owl:ObjectProperty rdf:about="&herder;R4_documents">
-        <rdfs:domain rdf:resource="&herder;H4_Source"/>
         <owl:inverseOf rdf:resource="&herder;R4i_is_documented_in"/>
         <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
-        <rdfs:subPropertyOf rdf:resource="&ecrm;P67_refers_to"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P70_documents"/>
+        <rdfs:domain rdf:resource="&ecrm;E31_Document"/>
     </owl:ObjectProperty>
     
 
@@ -920,10 +917,89 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/R4i_is_documented_in -->
 
     <owl:ObjectProperty rdf:about="&herder;R4i_is_documented_in">
-        <rdfs:range rdf:resource="&herder;H4_Source"/>
         <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
-        <rdfs:subPropertyOf rdf:resource="&ecrm;P67i_is_referred_to_by"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P70i_is_documented_in"/>
+        <rdfs:range rdf:resource="&ecrm;E31_Document"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R50_is_or_was_relation_subject_of -->
+
+    <owl:ObjectProperty rdf:about="&herder;R50_is_or_was_relation_subject_of">
+        <rdfs:range rdf:resource="&herder;H109_Personal_Relation"/>
+        <rdfs:domain rdf:resource="&herder;H14_Natural_Person"/>
+        <owl:inverseOf rdf:resource="&herder;R50i_has_or_had_subject"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P107i_is_current_or_former_member_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R50i_has_or_had_subject -->
+
+    <owl:ObjectProperty rdf:about="&herder;R50i_has_or_had_subject">
+        <rdfs:domain rdf:resource="&herder;H109_Personal_Relation"/>
+        <rdfs:range rdf:resource="&herder;H14_Natural_Person"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P107_has_current_or_former_member"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R51_is_or_was_relation_object_of -->
+
+    <owl:ObjectProperty rdf:about="&herder;R51_is_or_was_relation_object_of">
+        <rdfs:range rdf:resource="&herder;H109_Personal_Relation"/>
+        <rdfs:domain rdf:resource="&herder;H14_Natural_Person"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P107i_is_current_or_former_member_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R51i_has_or_had_object -->
+
+    <owl:ObjectProperty rdf:about="&herder;R51i_has_or_had_object">
+        <rdfs:domain rdf:resource="&herder;H109_Personal_Relation"/>
+        <rdfs:range rdf:resource="&herder;H14_Natural_Person"/>
+        <owl:inverseOf rdf:resource="&herder;R51_is_or_was_relation_object_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P107_has_current_or_former_member"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R52_has_transcription -->
+
+    <owl:ObjectProperty rdf:about="&herder;R52_has_transcription">
+        <rdfs:range rdf:resource="&herder;H21_Text"/>
+        <owl:inverseOf rdf:resource="&herder;R52i_is_transcription_of"/>
+        <rdfs:domain rdf:resource="&ecrm;E34_Inscription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R52i_is_transcription_of -->
+
+    <owl:ObjectProperty rdf:about="&herder;R52i_is_transcription_of">
+        <rdfs:domain rdf:resource="&herder;H21_Text"/>
+        <rdfs:range rdf:resource="&ecrm;E34_Inscription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R53_has_translation -->
+
+    <owl:ObjectProperty rdf:about="&herder;R53_has_translation">
+        <rdfs:domain rdf:resource="&herder;H21_Text"/>
+        <rdfs:range rdf:resource="&herder;H21_Text"/>
+        <owl:inverseOf rdf:resource="&herder;R53i_is_translation_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R53i_is_translation_of -->
+
+    <owl:ObjectProperty rdf:about="&herder;R53i_is_translation_of">
+        <rdfs:domain rdf:resource="&herder;H21_Text"/>
+        <rdfs:range rdf:resource="&herder;H21_Text"/>
     </owl:ObjectProperty>
     
 
@@ -1118,6 +1194,14 @@ This property is used to link parent object (a model) to different variations of
 
     <owl:Class rdf:about="&herder;H108_Condition_State">
         <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H109_Personal_Relation -->
+
+    <owl:Class rdf:about="&herder;H109_Personal_Relation">
+        <rdfs:subClassOf rdf:resource="&ecrm;E74_Group"/>
     </owl:Class>
     
 
