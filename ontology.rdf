@@ -1190,9 +1190,9 @@ This property is used to link parent object (a model) to different variations of
     
 
 
-    <!-- http://chml.foundation/ontology/H108_Condition_State -->
+    <!-- http://chml.foundation/ontology/H108_Condition_State_Type -->
 
-    <owl:Class rdf:about="&herder;H108_Condition_State">
+    <owl:Class rdf:about="&herder;H108_Condition_State_Type">
         <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
     </owl:Class>
     
