@@ -966,25 +966,6 @@ This property is used to link parent object (a model) to different variations of
     
 
 
-    <!-- http://chml.foundation/ontology/R53_has_translation -->
-
-    <owl:ObjectProperty rdf:about="&herder;R53_has_translation">
-        <owl:inverseOf rdf:resource="&herder;R53i_is_translation_of"/>
-        <rdfs:domain rdf:resource="&ecrm;E33_Linguistic_Object"/>
-        <rdfs:range rdf:resource="&ecrm;E33_Linguistic_Object"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://chml.foundation/ontology/R53i_is_translation_of -->
-
-    <owl:ObjectProperty rdf:about="&herder;R53i_is_translation_of">
-        <rdfs:range rdf:resource="&ecrm;E33_Linguistic_Object"/>
-        <rdfs:domain rdf:resource="&ecrm;E33_Linguistic_Object"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://chml.foundation/ontology/R5_created -->
 
     <owl:ObjectProperty rdf:about="&herder;R5_created">
