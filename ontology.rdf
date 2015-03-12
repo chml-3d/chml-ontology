@@ -908,8 +908,8 @@ This property is used to link parent object (a model) to different variations of
     <owl:ObjectProperty rdf:about="&herder;R4_documents">
         <owl:inverseOf rdf:resource="&herder;R4i_is_documented_in"/>
         <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
-        <rdfs:subPropertyOf rdf:resource="&ecrm;P70_documents"/>
         <rdfs:domain rdf:resource="&ecrm;E31_Document"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P70_documents"/>
     </owl:ObjectProperty>
     
 
@@ -918,8 +918,8 @@ This property is used to link parent object (a model) to different variations of
 
     <owl:ObjectProperty rdf:about="&herder;R4i_is_documented_in">
         <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
-        <rdfs:subPropertyOf rdf:resource="&ecrm;P70i_is_documented_in"/>
         <rdfs:range rdf:resource="&ecrm;E31_Document"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P70i_is_documented_in"/>
     </owl:ObjectProperty>
     
 
@@ -966,31 +966,12 @@ This property is used to link parent object (a model) to different variations of
     
 
 
-    <!-- http://chml.foundation/ontology/R52_has_transcription -->
-
-    <owl:ObjectProperty rdf:about="&herder;R52_has_transcription">
-        <rdfs:range rdf:resource="&herder;H21_Text"/>
-        <owl:inverseOf rdf:resource="&herder;R52i_is_transcription_of"/>
-        <rdfs:domain rdf:resource="&ecrm;E34_Inscription"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://chml.foundation/ontology/R52i_is_transcription_of -->
-
-    <owl:ObjectProperty rdf:about="&herder;R52i_is_transcription_of">
-        <rdfs:domain rdf:resource="&herder;H21_Text"/>
-        <rdfs:range rdf:resource="&ecrm;E34_Inscription"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://chml.foundation/ontology/R53_has_translation -->
 
     <owl:ObjectProperty rdf:about="&herder;R53_has_translation">
-        <rdfs:domain rdf:resource="&herder;H21_Text"/>
-        <rdfs:range rdf:resource="&herder;H21_Text"/>
         <owl:inverseOf rdf:resource="&herder;R53i_is_translation_of"/>
+        <rdfs:domain rdf:resource="&ecrm;E33_Linguistic_Object"/>
+        <rdfs:range rdf:resource="&ecrm;E33_Linguistic_Object"/>
     </owl:ObjectProperty>
     
 
@@ -998,8 +979,8 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/R53i_is_translation_of -->
 
     <owl:ObjectProperty rdf:about="&herder;R53i_is_translation_of">
-        <rdfs:domain rdf:resource="&herder;H21_Text"/>
-        <rdfs:range rdf:resource="&herder;H21_Text"/>
+        <rdfs:range rdf:resource="&ecrm;E33_Linguistic_Object"/>
+        <rdfs:domain rdf:resource="&ecrm;E33_Linguistic_Object"/>
     </owl:ObjectProperty>
     
 
@@ -1941,6 +1922,14 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
     <owl:Class rdf:about="&herder;H9_Source_Type">
         <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
     </owl:Class>
+    
+
+
+    <!-- http://erlangen-crm.org/140617/E34_Inscription -->
+
+    <rdf:Description rdf:about="&ecrm;E34_Inscription">
+        <rdfs:subClassOf rdf:resource="&herder;H21_Text"/>
+    </rdf:Description>
     
 
 
