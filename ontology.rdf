@@ -1001,11 +1001,53 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/R53i_is_image_scene_type_of -->
 
     <owl:ObjectProperty rdf:about="&herder;R53i_is_image_scene_type_of">
-        <rdfs:domain rdf:resource="&herder;H106_Digital_Source_Type"/>
+        <rdfs:domain rdf:resource="&herder;H105_Image_Scene"/>
         <rdfs:range rdf:resource="&herder;H4_Source"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P2i_is_type_of"/>
     </owl:ObjectProperty>
     
+
+
+    <!-- http://chml.foundation/ontology/R54_has_MIME_type -->
+
+    <owl:ObjectProperty rdf:about="&herder;R54_has_MIME_type">
+        <rdfs:range rdf:resource="&herder;H85_MIME_Type"/>
+        <rdfs:domain rdf:resource="&herder;H4_Source"/>
+        <owl:inverseOf rdf:resource="&herder;R54i_is_MIME_type_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2_has_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R54i_is_MIME_type_of -->
+
+    <owl:ObjectProperty rdf:about="&herder;R54i_is_MIME_type_of">
+        <rdfs:domain rdf:resource="&herder;H85_MIME_Type"/>
+        <rdfs:range rdf:resource="&herder;H4_Source"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2i_is_type_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R55_has_data_format_type -->
+
+    <owl:ObjectProperty rdf:about="&herder;R55_has_data_format_type">
+        <rdfs:range rdf:resource="&herder;H95_Data_Format"/>
+        <rdfs:domain rdf:resource="&herder;H4_Source"/>
+        <owl:inverseOf rdf:resource="&herder;R55i_is_data_format_type_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2_has_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R55i_is_data_format_type_of -->
+
+    <owl:ObjectProperty rdf:about="&herder;R55i_is_data_format_type_of">
+        <rdfs:domain rdf:resource="&herder;H95_Data_Format"/>
+        <rdfs:range rdf:resource="&herder;H4_Source"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2i_is_type_of"/>
+    </owl:ObjectProperty>
+
 
 
     <!-- http://chml.foundation/ontology/R5_created -->
