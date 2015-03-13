@@ -966,6 +966,48 @@ This property is used to link parent object (a model) to different variations of
     
 
 
+    <!-- http://chml.foundation/ontology/R52_has_digital_source_type -->
+
+    <owl:ObjectProperty rdf:about="&herder;R52_has_digital_source_type">
+        <rdfs:range rdf:resource="&herder;H106_Digital_Source_Type"/>
+        <rdfs:domain rdf:resource="&herder;H4_Source"/>
+        <owl:inverseOf rdf:resource="&herder;R52i_is_digital_source_type_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2_has_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R52i_is_digital_source_type_of -->
+
+    <owl:ObjectProperty rdf:about="&herder;R52i_is_digital_source_type_of">
+        <rdfs:domain rdf:resource="&herder;H106_Digital_Source_Type"/>
+        <rdfs:range rdf:resource="&herder;H4_Source"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2i_is_type_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R53_has_image_scene_type -->
+
+    <owl:ObjectProperty rdf:about="&herder;R53_has_image_scene_type">
+        <rdfs:range rdf:resource="&herder;H105_Image_Scene"/>
+        <rdfs:domain rdf:resource="&herder;H4_Source"/>
+        <owl:inverseOf rdf:resource="&herder;R53i_is_image_scene_type_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2_has_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R53i_is_image_scene_type_of -->
+
+    <owl:ObjectProperty rdf:about="&herder;R53i_is_image_scene_type_of">
+        <rdfs:domain rdf:resource="&herder;H106_Digital_Source_Type"/>
+        <rdfs:range rdf:resource="&herder;H4_Source"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2i_is_type_of"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://chml.foundation/ontology/R5_created -->
 
     <owl:ObjectProperty rdf:about="&herder;R5_created">
@@ -1172,6 +1214,14 @@ This property is used to link parent object (a model) to different variations of
 
     <owl:Class rdf:about="&herder;H10_Person_Type">
         <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H110_Translation -->
+
+    <owl:Class rdf:about="&herder;H110_Translation">
+        <rdfs:subClassOf rdf:resource="&herder;H21_Text"/>
     </owl:Class>
     
 
