@@ -1071,6 +1071,27 @@ This property is used to link parent object (a model) to different variations of
     
 
 
+    <!-- http://chml.foundation/ontology/R57_reports -->
+
+    <owl:ObjectProperty rdf:about="&herder;R57_reports">
+        <rdfs:domain rdf:resource="&herder;H2_Report"/>
+        <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P129_is_about"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R57i_is_reported_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R57i_is_reported_in">
+        <rdfs:range rdf:resource="&herder;H2_Report"/>
+        <owl:inverseOf rdf:resource="&herder;R57_reports"/>
+        <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P129i_is_subject_of"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://chml.foundation/ontology/R5_created -->
 
     <owl:ObjectProperty rdf:about="&herder;R5_created">
