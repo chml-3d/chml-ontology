@@ -1302,9 +1302,9 @@ This property is used to link parent object (a model) to different variations of
     
 
 
-    <!-- http://chml.foundation/ontology/H111_Place_Type -->
+    <!-- http://chml.foundation/ontology/H112_Place_Type -->
 
-    <owl:Class rdf:about="&herder;H111_Place_Type">
+    <owl:Class rdf:about="&herder;H112_Place_Type">
         <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
     </owl:Class>
     
