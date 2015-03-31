@@ -987,27 +987,6 @@ This property is used to link parent object (a model) to different variations of
     
 
 
-    <!-- http://chml.foundation/ontology/R53_has_image_scene_type -->
-
-    <owl:ObjectProperty rdf:about="&herder;R53_has_image_scene_type">
-        <rdfs:range rdf:resource="&herder;H105_Image_Scene"/>
-        <rdfs:domain rdf:resource="&herder;H4_Source"/>
-        <owl:inverseOf rdf:resource="&herder;R53i_is_image_scene_type_of"/>
-        <rdfs:subPropertyOf rdf:resource="&ecrm;P2_has_type"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://chml.foundation/ontology/R53i_is_image_scene_type_of -->
-
-    <owl:ObjectProperty rdf:about="&herder;R53i_is_image_scene_type_of">
-        <rdfs:domain rdf:resource="&herder;H105_Image_Scene"/>
-        <rdfs:range rdf:resource="&herder;H4_Source"/>
-        <rdfs:subPropertyOf rdf:resource="&ecrm;P2i_is_type_of"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://chml.foundation/ontology/R54_has_MIME_type -->
 
     <owl:ObjectProperty rdf:about="&herder;R54_has_MIME_type">
@@ -1254,14 +1233,6 @@ This property is used to link parent object (a model) to different variations of
     
 
 
-    <!-- http://chml.foundation/ontology/H105_Image_Scene -->
-
-    <owl:Class rdf:about="&herder;H105_Image_Scene">
-        <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
-    </owl:Class>
-    
-
-
     <!-- http://chml.foundation/ontology/H106_Digital_Source_Type -->
 
     <owl:Class rdf:about="&herder;H106_Digital_Source_Type">
@@ -1302,18 +1273,26 @@ This property is used to link parent object (a model) to different variations of
     
 
 
-    <!-- http://chml.foundation/ontology/H112_Place_Type -->
-
-    <owl:Class rdf:about="&herder;H112_Place_Type">
-        <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
-    </owl:Class>
-    
-
-
     <!-- http://chml.foundation/ontology/H110_Translation -->
 
     <owl:Class rdf:about="&herder;H110_Translation">
         <rdfs:subClassOf rdf:resource="&herder;H21_Text"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H111_Social_Network_ID -->
+
+    <owl:Class rdf:about="&herder;H111_Social_Network_ID">
+        <rdfs:subClassOf rdf:resource="&herder;H23_ID"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H112_Place_Type -->
+
+    <owl:Class rdf:about="&herder;H112_Place_Type">
+        <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
     </owl:Class>
     
 
@@ -1326,19 +1305,19 @@ This property is used to link parent object (a model) to different variations of
     
 
 
-    <!-- http://chml.foundation/ontology/H12_Legal_Body_Type -->
+    <!-- http://chml.foundation/ontology/H12_Corporate_Body_Type -->
 
-    <owl:Class rdf:about="&herder;H12_Legal_Body_Type">
+    <owl:Class rdf:about="&herder;H12_Corporate_Body_Type">
         <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
     </owl:Class>
     
 
 
-    <!-- http://chml.foundation/ontology/H13_Legal_Body -->
+    <!-- http://chml.foundation/ontology/H13_Corporate_Body -->
 
-    <owl:Class rdf:about="&herder;H13_Legal_Body">
+    <owl:Class rdf:about="&herder;H13_Corporate_Body">
         <rdfs:subClassOf rdf:resource="&herder;H19_Actor"/>
-        <rdfs:subClassOf rdf:resource="&ecrm;E40_Legal_Body"/>
+        <rdfs:subClassOf rdf:resource="&ecrm;E74_Group"/>
     </owl:Class>
     
 
