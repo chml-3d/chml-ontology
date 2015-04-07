@@ -1071,6 +1071,48 @@ This property is used to link parent object (a model) to different variations of
     
 
 
+    <!-- http://chml.foundation/ontology/R58_documents_earliest_date -->
+
+    <owl:ObjectProperty rdf:about="&herder;R58_documents_earliest_date">
+        <rdfs:domain rdf:resource="&herder;H4_Source"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R4_documents"/>
+        <rdfs:range rdf:resource="&ecrm;E52_Time-Span"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R58i_earliest_date_is_documented_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R58i_earliest_date_is_documented_in">
+        <rdfs:range rdf:resource="&herder;H4_Source"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R4i_is_documented_in"/>
+        <owl:inverseOf rdf:resource="&herder;R58_documents_earliest_date"/>
+        <rdfs:domain rdf:resource="&ecrm;E52_Time-Span"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R59_documents_latest_date -->
+
+    <owl:ObjectProperty rdf:about="&herder;R59_documents_latest_date">
+        <rdfs:domain rdf:resource="&herder;H4_Source"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R4_documents"/>
+        <rdfs:range rdf:resource="&ecrm;E52_Time-Span"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R59i_latest_date_is_documented_in -->
+
+    <owl:ObjectProperty rdf:about="&herder;R59i_latest_date_is_documented_in">
+        <rdfs:range rdf:resource="&herder;H4_Source"/>
+        <rdfs:subPropertyOf rdf:resource="&herder;R4i_is_documented_in"/>
+        <owl:inverseOf rdf:resource="&herder;R59_documents_latest_date"/>
+        <rdfs:domain rdf:resource="&ecrm;E52_Time-Span"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://chml.foundation/ontology/R5_created -->
 
     <owl:ObjectProperty rdf:about="&herder;R5_created">
