@@ -1134,6 +1134,48 @@ This property is used to link parent object (a model) to different variations of
     
 
 
+    <!-- http://chml.foundation/ontology/R60_annotated -->
+
+    <owl:ObjectProperty rdf:about="&herder;R60_annotated">
+        <rdfs:domain rdf:resource="&herder;H113_Annotation"/>
+        <rdfs:range rdf:resource="&herder;H17_Immaterial_Object"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P140_assigned_attribute_to"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R60i_was_annotated_by -->
+
+    <owl:ObjectProperty rdf:about="&herder;R60i_was_annotated_by">
+        <rdfs:range rdf:resource="&herder;H113_Annotation"/>
+        <rdfs:domain rdf:resource="&herder;H17_Immaterial_Object"/>
+        <owl:inverseOf rdf:resource="&herder;R60_annotated"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P140i_was_attributed_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R61_refers_to -->
+
+    <owl:ObjectProperty rdf:about="&herder;R61_refers_to">
+        <rdfs:domain rdf:resource="&herder;H113_Annotation"/>
+        <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P141_assigned"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R61i_is_referred_to_by -->
+
+    <owl:ObjectProperty rdf:about="&herder;R61i_is_referred_to_by">
+        <rdfs:range rdf:resource="&herder;H113_Annotation"/>
+        <owl:inverseOf rdf:resource="&herder;R61_refers_to"/>
+        <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P141i_was_assigned_by"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://chml.foundation/ontology/R6_describes -->
 
     <owl:ObjectProperty rdf:about="&herder;R6_describes">
@@ -1335,6 +1377,38 @@ This property is used to link parent object (a model) to different variations of
 
     <owl:Class rdf:about="&herder;H112_Place_Type">
         <rdfs:subClassOf rdf:resource="&herder;H6_CHML_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H113_Annotation -->
+
+    <owl:Class rdf:about="&herder;H113_Annotation">
+        <rdfs:subClassOf rdf:resource="&ecrm;E13_Attribute_Assignment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H114_Annotation_Type -->
+
+    <owl:Class rdf:about="&herder;H114_Annotation_Type">
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H115_Color -->
+
+    <owl:Class rdf:about="&herder;H115_Color">
+        <rdfs:subClassOf rdf:resource="&ecrm;E54_Dimension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H116_Annotation_Location -->
+
+    <owl:Class rdf:about="&herder;H116_Annotation_Location">
+        <rdfs:subClassOf rdf:resource="&herder;H104_Virtual_Place"/>
     </owl:Class>
     
 
