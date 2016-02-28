@@ -1176,6 +1176,27 @@ This property is used to link parent object (a model) to different variations of
     
 
 
+    <!-- http://chml.foundation/ontology/R62_represents_annotation -->
+
+    <owl:ObjectProperty rdf:about="&herder;R62_represents_annotation">
+        <rdfs:range rdf:resource="&herder;H113_Annotation"/>
+        <rdfs:domain rdf:resource="&herder;H114_Annotation_Representation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P138_represents"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R62i_has_representation -->
+
+    <owl:ObjectProperty rdf:about="&herder;R62i_has_representation">
+        <rdfs:domain rdf:resource="&herder;H113_Annotation"/>
+        <rdfs:range rdf:resource="&herder;H114_Annotation_Representation"/>
+        <owl:inverseOf rdf:resource="&herder;R62_represents_annotation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P138i_has_representation"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://chml.foundation/ontology/R6_describes -->
 
     <owl:ObjectProperty rdf:about="&herder;R6_describes">
@@ -1389,10 +1410,11 @@ This property is used to link parent object (a model) to different variations of
     
 
 
-    <!-- http://chml.foundation/ontology/H114_Annotation_Type -->
+    <!-- http://chml.foundation/ontology/H114_Annotation_Representation -->
 
-    <owl:Class rdf:about="&herder;H114_Annotation_Type">
-        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+    <owl:Class rdf:about="&herder;H114_Annotation_Representation">
+        <rdfs:subClassOf rdf:resource="&herder;H92_Geometric_Object"/>
+        <rdfs:subClassOf rdf:resource="&ecrm;E36_Visual_Item"/>
     </owl:Class>
     
 
@@ -1590,6 +1612,7 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/H36_2D-Image -->
 
     <owl:Class rdf:about="&herder;H36_2D-Image">
+        <rdfs:subClassOf rdf:resource="&herder;H17_Immaterial_Object"/>
         <rdfs:subClassOf rdf:resource="&ecrm;E38_Image"/>
     </owl:Class>
     
