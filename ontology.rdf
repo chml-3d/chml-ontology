@@ -14,13 +14,13 @@
 
 <rdf:RDF xmlns="http://wwwdh.cs.fau.de/ontologies/herder-test/"
      xml:base="http://wwwdh.cs.fau.de/ontologies/herder-test/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ecrm="http://erlangen-crm.org/140617/"
-     xmlns:herder-inst="http://www.patrimonium.net/content/"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:herder="http://chml.foundation/ontology/"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:ecrm="http://erlangen-crm.org/140617/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:herder-inst="http://www.patrimonium.net/content/">
     <owl:Ontology rdf:about="http://chml.foundation/ontology/">
         <owl:versionInfo rdf:datatype="&xsd;integer">141027</owl:versionInfo>
         <rdfs:comment xml:lang="de">141027 (Martin Scholz):
@@ -180,8 +180,8 @@ This ontology is licensed under a Creative Commons Attribution-ShareAlike 3.0 Un
     <!-- http://chml.foundation/ontology/R16_contains_given_name -->
 
     <owl:ObjectProperty rdf:about="&herder;R16_contains_given_name">
-        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
         <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P106_is_composed_of"/>
     </owl:ObjectProperty>
     
@@ -191,8 +191,8 @@ This ontology is licensed under a Creative Commons Attribution-ShareAlike 3.0 Un
 
     <owl:ObjectProperty rdf:about="&herder;R16i_is_given_name_in">
         <owl:inverseOf rdf:resource="&herder;R16_contains_given_name"/>
-        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
         <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P106i_forms_part_of"/>
     </owl:ObjectProperty>
     
@@ -212,8 +212,8 @@ This ontology is licensed under a Creative Commons Attribution-ShareAlike 3.0 Un
 
     <owl:ObjectProperty rdf:about="&herder;R17i_is_surname_in">
         <owl:inverseOf rdf:resource="&herder;R17_contains_surname"/>
-        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
         <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P106i_forms_part_of"/>
     </owl:ObjectProperty>
     
@@ -244,8 +244,8 @@ This ontology is licensed under a Creative Commons Attribution-ShareAlike 3.0 Un
 
     <owl:ObjectProperty rdf:about="&herder;R19_contains_first_surname">
         <rdfs:subPropertyOf rdf:resource="&herder;R17_contains_surname"/>
-        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
         <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
     </owl:ObjectProperty>
     
 
@@ -412,6 +412,7 @@ This ontology is licensed under a Creative Commons Attribution-ShareAlike 3.0 Un
     <!-- http://chml.foundation/ontology/R26_documents -->
 
     <owl:ObjectProperty rdf:about="&herder;R26_documents">
+        <rdfs:comment>Key prop (CHML: shown by)</rdfs:comment>
         <rdfs:domain rdf:resource="&herder;H4_Source"/>
         <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P70_documents"/>
@@ -434,6 +435,7 @@ This ontology is licensed under a Creative Commons Attribution-ShareAlike 3.0 Un
 
     <owl:ObjectProperty rdf:about="&herder;R27_is_similar_to">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:comment>Key prop</rdfs:comment>
         <rdfs:domain rdf:resource="&herder;H18_Object"/>
         <rdfs:range rdf:resource="&herder;H18_Object"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P130_shows_features_of"/>
@@ -459,27 +461,6 @@ This ontology is licensed under a Creative Commons Attribution-ShareAlike 3.0 Un
         <rdfs:range rdf:resource="&herder;H4_Source"/>
         <owl:inverseOf rdf:resource="&herder;R28_is_about"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P129i_is_subject_of"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://chml.foundation/ontology/R29_reconstructs -->
-
-    <owl:ObjectProperty rdf:about="&herder;R29_reconstructs">
-        <rdfs:domain rdf:resource="&herder;H3_3D-Reconstruction"/>
-        <rdfs:range rdf:resource="&herder;H5_Material_Object"/>
-        <rdfs:subPropertyOf rdf:resource="&ecrm;P138_represents"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://chml.foundation/ontology/R29i_has_reconstruction -->
-
-    <owl:ObjectProperty rdf:about="&herder;R29i_has_reconstruction">
-        <rdfs:range rdf:resource="&herder;H3_3D-Reconstruction"/>
-        <rdfs:domain rdf:resource="&herder;H5_Material_Object"/>
-        <owl:inverseOf rdf:resource="&herder;R29_reconstructs"/>
-        <rdfs:subPropertyOf rdf:resource="&ecrm;P138i_has_representation"/>
     </owl:ObjectProperty>
     
 
@@ -529,6 +510,7 @@ This ontology is licensed under a Creative Commons Attribution-ShareAlike 3.0 Un
     <!-- http://chml.foundation/ontology/R31_has_title -->
 
     <owl:ObjectProperty rdf:about="&herder;R31_has_title">
+        <rdfs:comment>Key prop (titleset)</rdfs:comment>
         <mappingGuideline xml:lang="en">chml:titleSet
 
 This is not subclass of P102_has_title but merely subclass of P1_is_identified_by as the title(Set) element includes appellations
@@ -554,6 +536,8 @@ that are not titles in the sense of the CRM (ie. words of human language), eg. s
     <!-- http://chml.foundation/ontology/R32_has_preferred_appellation -->
 
     <owl:ObjectProperty rdf:about="&herder;R32_has_preferred_appellation">
+        <rdfs:comment>Key prop
+defines which entry of the titleset should be used for display</rdfs:comment>
         <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
         <rdfs:range rdf:resource="&ecrm;E41_Appellation"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P1_is_identified_by"/>
@@ -617,8 +601,8 @@ that are not titles in the sense of the CRM (ie. words of human language), eg. s
     <!-- http://chml.foundation/ontology/R35_is_equal_to -->
 
     <owl:ObjectProperty rdf:about="&herder;R35_is_equal_to">
-        <rdfs:domain rdf:resource="&herder;H18_Object"/>
         <rdfs:range rdf:resource="&herder;H18_Object"/>
+        <rdfs:domain rdf:resource="&herder;H18_Object"/>
         <rdfs:subPropertyOf rdf:resource="&herder;R27_is_similar_to"/>
     </owl:ObjectProperty>
     
@@ -705,6 +689,7 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/R3_dealt_with -->
 
     <owl:ObjectProperty rdf:about="&herder;R3_dealt_with">
+        <rdfs:comment>Key prop (generic Action &lt;-&gt; Object)</rdfs:comment>
         <rdfs:domain rdf:resource="&herder;H1_Action"/>
         <rdfs:range rdf:resource="&ecrm;E77_Persistent_Item"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P12_occurred_in_the_presence_of"/>
@@ -805,8 +790,8 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/R45_can_have_part -->
 
     <owl:ObjectProperty rdf:about="&herder;R45_can_have_part">
-        <rdfs:domain rdf:resource="&herder;H6_CHML_Type"/>
         <rdfs:range rdf:resource="&herder;H6_CHML_Type"/>
+        <rdfs:domain rdf:resource="&herder;H6_CHML_Type"/>
     </owl:ObjectProperty>
     
 
@@ -826,8 +811,8 @@ This property is used to link parent object (a model) to different variations of
     <owl:ObjectProperty rdf:about="&herder;R46_contains_birth_surname">
         <rdfs:subPropertyOf rdf:resource="&herder;R17_contains_surname"/>
         <owl:inverseOf rdf:resource="&herder;R46i_is_birth_surname_in"/>
-        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
         <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
     </owl:ObjectProperty>
     
 
@@ -1242,6 +1227,7 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/R8_has_part -->
 
     <owl:ObjectProperty rdf:about="&herder;R8_has_part">
+        <rdfs:comment>Key prop</rdfs:comment>
         <rdfs:range rdf:resource="&herder;H5_Material_Object"/>
         <rdfs:domain rdf:resource="&herder;H5_Material_Object"/>
         <owl:inverseOf rdf:resource="&herder;R8i_is_part_of"/>
@@ -1253,10 +1239,18 @@ This property is used to link parent object (a model) to different variations of
     <!-- http://chml.foundation/ontology/R8i_is_part_of -->
 
     <owl:ObjectProperty rdf:about="&herder;R8i_is_part_of">
-        <rdfs:domain rdf:resource="&herder;H5_Material_Object"/>
         <rdfs:range rdf:resource="&herder;H5_Material_Object"/>
+        <rdfs:domain rdf:resource="&herder;H5_Material_Object"/>
         <rdfs:subPropertyOf rdf:resource="&ecrm;P46i_forms_part_of"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://erlangen-crm.org/140617/P138_represents -->
+
+    <rdf:Description rdf:about="&ecrm;P138_represents">
+        <rdfs:comment>Key prop (Object &lt;-&gt; 3D Model)</rdfs:comment>
+    </rdf:Description>
     
 
 
@@ -1406,6 +1400,7 @@ This property is used to link parent object (a model) to different variations of
 
     <owl:Class rdf:about="&herder;H113_Annotation">
         <rdfs:subClassOf rdf:resource="&ecrm;E13_Attribute_Assignment"/>
+        <rdfs:comment>Key class (for the 3D annotation model)</rdfs:comment>
     </owl:Class>
     
 
@@ -1456,6 +1451,7 @@ This property is used to link parent object (a model) to different variations of
     <owl:Class rdf:about="&herder;H13_Corporate_Body">
         <rdfs:subClassOf rdf:resource="&herder;H19_Actor"/>
         <rdfs:subClassOf rdf:resource="&ecrm;E74_Group"/>
+        <rdfs:comment>Key class (basic CHML)</rdfs:comment>
     </owl:Class>
     
 
@@ -1465,6 +1461,7 @@ This property is used to link parent object (a model) to different variations of
     <owl:Class rdf:about="&herder;H14_Natural_Person">
         <rdfs:subClassOf rdf:resource="&herder;H19_Actor"/>
         <rdfs:subClassOf rdf:resource="&ecrm;E21_Person"/>
+        <rdfs:comment>Key class (basic CHML)</rdfs:comment>
     </owl:Class>
     
 
@@ -1491,6 +1488,7 @@ This property is used to link parent object (a model) to different variations of
     <owl:Class rdf:about="&herder;H17_Immaterial_Object">
         <rdfs:subClassOf rdf:resource="&herder;H18_Object"/>
         <rdfs:subClassOf rdf:resource="&ecrm;E28_Conceptual_Object"/>
+        <rdfs:comment>Key class (bundles properties of base classes for immaterial things)</rdfs:comment>
     </owl:Class>
     
 
@@ -1516,6 +1514,7 @@ This property is used to link parent object (a model) to different variations of
     <owl:Class rdf:about="&herder;H1_Action">
         <rdfs:subClassOf rdf:resource="&ecrm;E7_Activity"/>
         <owl:disjointWith rdf:resource="&herder;H20_Event"/>
+        <rdfs:comment>Key class (basic CHML)</rdfs:comment>
     </owl:Class>
     
 
@@ -1540,6 +1539,7 @@ This property is used to link parent object (a model) to different variations of
 
     <owl:Class rdf:about="&herder;H23_ID">
         <rdfs:subClassOf rdf:resource="&ecrm;E42_Identifier"/>
+        <rdfs:comment>Key class (Identifier set)</rdfs:comment>
     </owl:Class>
     
 
@@ -1597,6 +1597,7 @@ This property is used to link parent object (a model) to different variations of
     <owl:Class rdf:about="&herder;H2_Report">
         <rdfs:subClassOf rdf:resource="&herder;H21_Text"/>
         <rdfs:subClassOf rdf:resource="&ecrm;E31_Document"/>
+        <rdfs:comment>Key class (reports of actions esp. reconstructions)</rdfs:comment>
     </owl:Class>
     
 
@@ -1605,6 +1606,7 @@ This property is used to link parent object (a model) to different variations of
 
     <owl:Class rdf:about="&herder;H30_Geographic_Place">
         <rdfs:subClassOf rdf:resource="&ecrm;E53_Place"/>
+        <rdfs:comment>Key class</rdfs:comment>
     </owl:Class>
     
 
@@ -1648,6 +1650,7 @@ This property is used to link parent object (a model) to different variations of
         <rdfs:subClassOf rdf:resource="&herder;H17_Immaterial_Object"/>
         <rdfs:subClassOf rdf:resource="&herder;H92_Geometric_Object"/>
         <rdfs:subClassOf rdf:resource="&ecrm;E36_Visual_Item"/>
+        <rdfs:comment>Key class (a reconstruction containing 0 to n 3D model versions)</rdfs:comment>
     </owl:Class>
     
 
@@ -1730,6 +1733,7 @@ This property is used to link parent object (a model) to different variations of
     <owl:Class rdf:about="&herder;H4_Source">
         <rdfs:subClassOf rdf:resource="&herder;H17_Immaterial_Object"/>
         <rdfs:subClassOf rdf:resource="&ecrm;E31_Document"/>
+        <rdfs:comment>Key class (basic CHML)</rdfs:comment>
     </owl:Class>
     
 
@@ -1819,6 +1823,7 @@ This property is used to link parent object (a model) to different variations of
     <owl:Class rdf:about="&herder;H5_Material_Object">
         <rdfs:subClassOf rdf:resource="&herder;H18_Object"/>
         <rdfs:subClassOf rdf:resource="&ecrm;E22_Man-Made_Object"/>
+        <rdfs:comment>Key class (basic CHML)</rdfs:comment>
         <mappingGuideline xml:lang="en">chml:objectType
 
 Every object is modelled as physical object even if it is not clear if it really existed.
@@ -1929,6 +1934,7 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
 
     <owl:Class rdf:about="&herder;H6_CHML_Type">
         <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+        <rdfs:comment>Key class (basic CHML)</rdfs:comment>
     </owl:Class>
     
 
@@ -1978,6 +1984,7 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
 
     <owl:Class rdf:about="&herder;H76_Title">
         <rdfs:subClassOf rdf:resource="&ecrm;E41_Appellation"/>
+        <rdfs:comment>Key class (title set)</rdfs:comment>
     </owl:Class>
     
 
