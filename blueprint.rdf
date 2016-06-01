@@ -1,0 +1,2721 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY ecrm "http://erlangen-crm.org/140617/" >
+    <!ENTITY chml "http://chml.foundation/ontology/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY herder-inst "http://www.patrimonium.net/content/" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://wwwdh.cs.fau.de/ontologies/herder-test/"
+     xml:base="http://wwwdh.cs.fau.de/ontologies/herder-test/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:ecrm="http://erlangen-crm.org/140617/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:chml="http://chml.foundation/ontology/"
+     xmlns:herder-inst="http://www.patrimonium.net/content/">
+    <owl:Ontology rdf:about="http://chml.foundation/ontology/">
+        <rdfs:comment xml:lang="en">The CHML application ontology is dedicated to the human- and machine readable documentation of the digital 3D reconstruction of destroyed and/or never realised Cultural Heritage objects (art&amp;architecture).
+
+CHML ontology is CIDOC CRM compliant and implemented for the first time within a costumised Virtual Research Environment at www.patrimonium.net.
+
+Project funded by the Leibniz Association (Berlin, Germany) form July 2013 to June 2016. The CHML ontology was designed by Oliver Hauck, Piotr Kuroczyński and Martin Scholz.</rdfs:comment>
+        <owl:versionIRI rdf:resource="&chml;1.1"/>
+        <owl:imports rdf:resource="http://erlangen-crm.org/140617/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://chml.foundation/ontology/mappingGuideline -->
+
+    <owl:AnnotationProperty rdf:about="&chml;mappingGuideline">
+        <rdfs:comment xml:lang="en">Notes or specifications how this ontology maps to CHML.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;comment"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://wwwdh.cs.fau.de/ontologies/herder-test/mappingGuideline -->
+
+    <owl:AnnotationProperty rdf:about="http://wwwdh.cs.fau.de/ontologies/herder-test/mappingGuideline"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://chml.foundation/ontology/R11_produced -->
+
+    <owl:ObjectProperty rdf:about="&chml;R11_produced">
+        <rdfs:domain rdf:resource="&chml;H27_Production"/>
+        <rdfs:range rdf:resource="&chml;H5_Material_Object"/>
+        <owl:inverseOf rdf:resource="&chml;R11i_was_produced_by"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P108_has_produced"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R11i_was_produced_by -->
+
+    <owl:ObjectProperty rdf:about="&chml;R11i_was_produced_by">
+        <rdfs:range rdf:resource="&chml;H27_Production"/>
+        <rdfs:domain rdf:resource="&chml;H5_Material_Object"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P108i_was_produced_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R12_has_pseudonym -->
+
+    <owl:ObjectProperty rdf:about="&chml;R12_has_pseudonym">
+        <rdfs:domain rdf:resource="&chml;H14_Natural_Person"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131_is_identified_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R12i_is_pseudonym_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R12i_is_pseudonym_of">
+        <rdfs:range rdf:resource="&chml;H14_Natural_Person"/>
+        <owl:inverseOf rdf:resource="&chml;R12_has_pseudonym"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131i_identifies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R13_has_name -->
+
+    <owl:ObjectProperty rdf:about="&chml;R13_has_name">
+        <rdfs:domain rdf:resource="&chml;H14_Natural_Person"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131_is_identified_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R13i_is_name_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R13i_is_name_of">
+        <rdfs:range rdf:resource="&chml;H14_Natural_Person"/>
+        <owl:inverseOf rdf:resource="&chml;R13_has_name"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131i_identifies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R14_has_official_title -->
+
+    <owl:ObjectProperty rdf:about="&chml;R14_has_official_title">
+        <rdfs:domain rdf:resource="&chml;H14_Natural_Person"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131_is_identified_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R14i_is_official_title_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R14i_is_official_title_of">
+        <rdfs:range rdf:resource="&chml;H14_Natural_Person"/>
+        <owl:inverseOf rdf:resource="&chml;R14_has_official_title"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131i_identifies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R15_has_degree -->
+
+    <owl:ObjectProperty rdf:about="&chml;R15_has_degree">
+        <rdfs:domain rdf:resource="&chml;H14_Natural_Person"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131_is_identified_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R15i_is_degree_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R15i_is_degree_of">
+        <rdfs:range rdf:resource="&chml;H14_Natural_Person"/>
+        <owl:inverseOf rdf:resource="&chml;R15_has_degree"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131i_identifies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R16_contains_given_name -->
+
+    <owl:ObjectProperty rdf:about="&chml;R16_contains_given_name">
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P106_is_composed_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R16i_is_given_name_in -->
+
+    <owl:ObjectProperty rdf:about="&chml;R16i_is_given_name_in">
+        <owl:inverseOf rdf:resource="&chml;R16_contains_given_name"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P106i_forms_part_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R17_contains_surname -->
+
+    <owl:ObjectProperty rdf:about="&chml;R17_contains_surname">
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P106_is_composed_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R17i_is_surname_in -->
+
+    <owl:ObjectProperty rdf:about="&chml;R17i_is_surname_in">
+        <owl:inverseOf rdf:resource="&chml;R17_contains_surname"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P106i_forms_part_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R18_contains_first_given_name -->
+
+    <owl:ObjectProperty rdf:about="&chml;R18_contains_first_given_name">
+        <rdfs:subPropertyOf rdf:resource="&chml;R16_contains_given_name"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R18i_is_first_given_name_in -->
+
+    <owl:ObjectProperty rdf:about="&chml;R18i_is_first_given_name_in">
+        <rdfs:subPropertyOf rdf:resource="&chml;R16i_is_given_name_in"/>
+        <owl:inverseOf rdf:resource="&chml;R18_contains_first_given_name"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R19_contains_first_surname -->
+
+    <owl:ObjectProperty rdf:about="&chml;R19_contains_first_surname">
+        <rdfs:subPropertyOf rdf:resource="&chml;R17_contains_surname"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R19i_is_first_surname_in -->
+
+    <owl:ObjectProperty rdf:about="&chml;R19i_is_first_surname_in">
+        <rdfs:subPropertyOf rdf:resource="&chml;R17i_is_surname_in"/>
+        <owl:inverseOf rdf:resource="&chml;R19_contains_first_surname"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R1_reports -->
+
+    <owl:ObjectProperty rdf:about="&chml;R1_reports">
+        <rdfs:range rdf:resource="&chml;H1_Research_Activity"/>
+        <rdfs:domain rdf:resource="&chml;H2_Report"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P129_is_about"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P70_documents"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R1i_is_reported_in -->
+
+    <owl:ObjectProperty rdf:about="&chml;R1i_is_reported_in">
+        <rdfs:domain rdf:resource="&chml;H1_Research_Activity"/>
+        <rdfs:range rdf:resource="&chml;H2_Report"/>
+        <owl:inverseOf rdf:resource="&chml;R1_reports"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P129i_is_subject_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P70i_is_documented_in"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R20_has_gender -->
+
+    <owl:ObjectProperty rdf:about="&chml;R20_has_gender">
+        <rdfs:domain rdf:resource="&chml;H14_Natural_Person"/>
+        <rdfs:range rdf:resource="&chml;H48_Gender"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2_has_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R20i_is_gender_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R20i_is_gender_of">
+        <rdfs:range rdf:resource="&chml;H14_Natural_Person"/>
+        <rdfs:domain rdf:resource="&chml;H48_Gender"/>
+        <owl:inverseOf rdf:resource="&chml;R20_has_gender"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2i_is_type_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R21_has_nationality -->
+
+    <owl:ObjectProperty rdf:about="&chml;R21_has_nationality">
+        <rdfs:domain rdf:resource="&chml;H14_Natural_Person"/>
+        <rdfs:range rdf:resource="&chml;H51_Nationality"/>
+        <owl:inverseOf rdf:resource="&chml;R21i_is_nationality_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P107i_is_current_or_former_member_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R21i_is_nationality_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R21i_is_nationality_of">
+        <rdfs:range rdf:resource="&chml;H14_Natural_Person"/>
+        <rdfs:domain rdf:resource="&chml;H51_Nationality"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P107_has_current_or_former_member"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R22_begins -->
+
+    <owl:ObjectProperty rdf:about="&chml;R22_begins">
+        <rdfs:range rdf:resource="&chml;H52_Membership"/>
+        <rdfs:domain rdf:resource="&ecrm;E85_Joining"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P116_starts"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R22i_begins_with -->
+
+    <owl:ObjectProperty rdf:about="&chml;R22i_begins_with">
+        <rdfs:domain rdf:resource="&chml;H52_Membership"/>
+        <owl:inverseOf rdf:resource="&chml;R22_begins"/>
+        <rdfs:range rdf:resource="&ecrm;E85_Joining"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P116i_is_started_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R23_ends -->
+
+    <owl:ObjectProperty rdf:about="&chml;R23_ends">
+        <rdfs:range rdf:resource="&chml;H52_Membership"/>
+        <rdfs:domain rdf:resource="&ecrm;E86_Leaving"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P115_finishes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R23i_ends_with -->
+
+    <owl:ObjectProperty rdf:about="&chml;R23i_ends_with">
+        <rdfs:domain rdf:resource="&chml;H52_Membership"/>
+        <owl:inverseOf rdf:resource="&chml;R23_ends"/>
+        <rdfs:range rdf:resource="&ecrm;E86_Leaving"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P115i_is_finished_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R24_was_member_during -->
+
+    <owl:ObjectProperty rdf:about="&chml;R24_was_member_during">
+        <rdfs:comment xml:lang="en">This is a shortcut for H19 Akteur -&gt; P143 joined -&gt; E85 Joining -&gt; R22 beginnt -&gt; H52 Zugehoerigkeit</rdfs:comment>
+        <rdfs:domain rdf:resource="&chml;H19_Actor"/>
+        <rdfs:range rdf:resource="&chml;H52_Membership"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R24i_had_member_during -->
+
+    <owl:ObjectProperty rdf:about="&chml;R24i_had_member_during">
+        <rdfs:range rdf:resource="&chml;H19_Actor"/>
+        <rdfs:domain rdf:resource="&chml;H52_Membership"/>
+        <owl:inverseOf rdf:resource="&chml;R24_was_member_during"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R25_had_purpose -->
+
+    <owl:ObjectProperty rdf:about="&chml;R25_had_purpose">
+        <rdfs:domain rdf:resource="&chml;H1_Research_Activity"/>
+        <rdfs:range rdf:resource="&chml;H72_Action_Goal"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P21_had_general_purpose"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R25i_was_purpose_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R25i_was_purpose_of">
+        <rdfs:range rdf:resource="&chml;H1_Research_Activity"/>
+        <rdfs:domain rdf:resource="&chml;H72_Action_Goal"/>
+        <owl:inverseOf rdf:resource="&chml;R25_had_purpose"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P21i_was_purpose_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R26_documents -->
+
+    <owl:ObjectProperty rdf:about="&chml;R26_documents">
+        <rdfs:comment>Key prop (CHML: shown by)</rdfs:comment>
+        <rdfs:domain rdf:resource="&chml;H4_Source"/>
+        <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P70_documents"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R26i_is_documented_in -->
+
+    <owl:ObjectProperty rdf:about="&chml;R26i_is_documented_in">
+        <rdfs:range rdf:resource="&chml;H4_Source"/>
+        <owl:inverseOf rdf:resource="&chml;R26_documents"/>
+        <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P70i_is_documented_in"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R27_is_similar_to -->
+
+    <owl:ObjectProperty rdf:about="&chml;R27_is_similar_to">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:comment>Key prop</rdfs:comment>
+        <rdfs:range rdf:resource="&chml;H18_Semantic_Object"/>
+        <rdfs:domain rdf:resource="&chml;H18_Semantic_Object"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P130_shows_features_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P130i_features_are_also_found_on"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R28_is_about -->
+
+    <owl:ObjectProperty rdf:about="&chml;R28_is_about">
+        <rdfs:range rdf:resource="&chml;H29_Period"/>
+        <rdfs:domain rdf:resource="&chml;H4_Source"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P129_is_about"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R28i_is_subject_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R28i_is_subject_of">
+        <rdfs:domain rdf:resource="&chml;H29_Period"/>
+        <rdfs:range rdf:resource="&chml;H4_Source"/>
+        <owl:inverseOf rdf:resource="&chml;R28_is_about"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P129i_is_subject_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R2_used_model -->
+
+    <owl:ObjectProperty rdf:about="&chml;R2_used_model">
+        <rdfs:domain rdf:resource="&chml;H1_Research_Activity"/>
+        <rdfs:range rdf:resource="&chml;H7_Action_Type"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P32_used_general_technique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R2i_was_model_for -->
+
+    <owl:ObjectProperty rdf:about="&chml;R2i_was_model_for">
+        <rdfs:range rdf:resource="&chml;H1_Research_Activity"/>
+        <rdfs:domain rdf:resource="&chml;H7_Action_Type"/>
+        <owl:inverseOf rdf:resource="&chml;R2_used_model"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P32i_was_technique_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R30_has_language -->
+
+    <owl:ObjectProperty rdf:about="&chml;R30_has_language">
+        <rdfs:domain rdf:resource="&ecrm;E41_Appellation"/>
+        <rdfs:range rdf:resource="&ecrm;E56_Language"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2_has_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R30i_is_language_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R30i_is_language_of">
+        <owl:inverseOf rdf:resource="&chml;R30_has_language"/>
+        <rdfs:range rdf:resource="&ecrm;E41_Appellation"/>
+        <rdfs:domain rdf:resource="&ecrm;E56_Language"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2i_is_type_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R31_has_title -->
+
+    <owl:ObjectProperty rdf:about="&chml;R31_has_title">
+        <rdfs:comment>Key prop (titleset)</rdfs:comment>
+        <mappingGuideline xml:lang="en">chml:titleSet
+
+This is not subclass of P102_has_title but merely subclass of P1_is_identified_by as the title(Set) element includes appellations
+that are not titles in the sense of the CRM (ie. words of human language), eg. signatures.</mappingGuideline>
+        <rdfs:range rdf:resource="&chml;H76_Title"/>
+        <rdfs:domain rdf:resource="&ecrm;E71_Man-Made_Thing"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P1_is_identified_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R31i_is_title_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R31i_is_title_of">
+        <rdfs:domain rdf:resource="&chml;H76_Title"/>
+        <owl:inverseOf rdf:resource="&chml;R31_has_title"/>
+        <rdfs:range rdf:resource="&ecrm;E71_Man-Made_Thing"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P1i_identifies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R32_has_preferred_appellation -->
+
+    <owl:ObjectProperty rdf:about="&chml;R32_has_preferred_appellation">
+        <rdfs:comment>Key prop
+defines which entry of the titleset should be used for display</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:range rdf:resource="&ecrm;E41_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P1_is_identified_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R32i_is_preferred_appellation_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R32i_is_preferred_appellation_of">
+        <owl:inverseOf rdf:resource="&chml;R32_has_preferred_appellation"/>
+        <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:domain rdf:resource="&ecrm;E41_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P1i_identifies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R33_assigned_topic_to -->
+
+    <owl:ObjectProperty rdf:about="&chml;R33_assigned_topic_to">
+        <rdfs:domain rdf:resource="&chml;H78_Topic_Assignment"/>
+        <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P140_assigned_attribute_to"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R33i_was_assigned_topic_by -->
+
+    <owl:ObjectProperty rdf:about="&chml;R33i_was_assigned_topic_by">
+        <rdfs:range rdf:resource="&chml;H78_Topic_Assignment"/>
+        <owl:inverseOf rdf:resource="&chml;R33_assigned_topic_to"/>
+        <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P140i_was_attributed_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R34_assigned_topic -->
+
+    <owl:ObjectProperty rdf:about="&chml;R34_assigned_topic">
+        <rdfs:domain rdf:resource="&chml;H78_Topic_Assignment"/>
+        <rdfs:range rdf:resource="&chml;H79_Topic"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P141_assigned"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R34i_was_assigned_as_topic_by -->
+
+    <owl:ObjectProperty rdf:about="&chml;R34i_was_assigned_as_topic_by">
+        <rdfs:range rdf:resource="&chml;H78_Topic_Assignment"/>
+        <rdfs:domain rdf:resource="&chml;H79_Topic"/>
+        <owl:inverseOf rdf:resource="&chml;R34_assigned_topic"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P141i_was_assigned_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R35_is_equal_to -->
+
+    <owl:ObjectProperty rdf:about="&chml;R35_is_equal_to">
+        <rdfs:domain rdf:resource="&chml;H18_Semantic_Object"/>
+        <rdfs:range rdf:resource="&chml;H18_Semantic_Object"/>
+        <rdfs:subPropertyOf rdf:resource="&chml;R27_is_similar_to"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R36_has_variant -->
+
+    <owl:ObjectProperty rdf:about="&chml;R36_has_variant">
+        <rdfs:comment xml:lang="en">Scope note:
+This property is used to link parent object (a model) to different variations of the model, so this is more child-parent relation than sibling relation (it should be not used to link variations of the same model to each other).</rdfs:comment>
+        <rdfs:range rdf:resource="&chml;H3_3D-Reconstruction"/>
+        <rdfs:domain rdf:resource="&chml;H3_3D-Reconstruction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R36i_is_variant_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R36i_is_variant_of">
+        <rdfs:domain rdf:resource="&chml;H3_3D-Reconstruction"/>
+        <rdfs:range rdf:resource="&chml;H3_3D-Reconstruction"/>
+        <owl:inverseOf rdf:resource="&chml;R36_has_variant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R37_has_min -->
+
+    <owl:ObjectProperty rdf:about="&chml;R37_has_min">
+        <rdfs:range rdf:resource="&chml;H86_Geometry_Point"/>
+        <rdfs:domain rdf:resource="&chml;H92_Geometric_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R37i_is_min_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R37i_is_min_of">
+        <rdfs:domain rdf:resource="&chml;H86_Geometry_Point"/>
+        <rdfs:range rdf:resource="&chml;H92_Geometric_Object"/>
+        <owl:inverseOf rdf:resource="&chml;R37_has_min"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R38_has_max -->
+
+    <owl:ObjectProperty rdf:about="&chml;R38_has_max">
+        <rdfs:domain rdf:resource="&chml;H3_3D-Reconstruction"/>
+        <rdfs:range rdf:resource="&chml;H92_Geometric_Object"/>
+        <owl:inverseOf rdf:resource="&chml;R38i_is_max_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R38i_is_max_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R38i_is_max_of">
+        <rdfs:domain rdf:resource="&chml;H86_Geometry_Point"/>
+        <rdfs:range rdf:resource="&chml;H92_Geometric_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R39_has_insertion_point -->
+
+    <owl:ObjectProperty rdf:about="&chml;R39_has_insertion_point">
+        <rdfs:range rdf:resource="&chml;H86_Geometry_Point"/>
+        <rdfs:domain rdf:resource="&chml;H92_Geometric_Object"/>
+        <owl:inverseOf rdf:resource="&chml;R39i_is_insertion_point_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R39i_is_insertion_point_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R39i_is_insertion_point_of">
+        <rdfs:domain rdf:resource="&chml;H86_Geometry_Point"/>
+        <rdfs:range rdf:resource="&chml;H92_Geometric_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R3_dealt_with -->
+
+    <owl:ObjectProperty rdf:about="&chml;R3_dealt_with">
+        <rdfs:comment>Key prop (generic Action &lt;-&gt; Object)</rdfs:comment>
+        <rdfs:domain rdf:resource="&chml;H1_Research_Activity"/>
+        <rdfs:range rdf:resource="&ecrm;E77_Persistent_Item"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P12_occurred_in_the_presence_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R3i_was_dealt_with_in -->
+
+    <owl:ObjectProperty rdf:about="&chml;R3i_was_dealt_with_in">
+        <rdfs:range rdf:resource="&chml;H1_Research_Activity"/>
+        <owl:inverseOf rdf:resource="&chml;R3_dealt_with"/>
+        <rdfs:domain rdf:resource="&ecrm;E77_Persistent_Item"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P12i_was_present_at"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R41_has_boundary -->
+
+    <owl:ObjectProperty rdf:about="&chml;R41_has_boundary">
+        <rdfs:range rdf:resource="&chml;H92_Geometric_Object"/>
+        <rdfs:domain rdf:resource="&chml;H92_Geometric_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R41i_is_boundary_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R41i_is_boundary_of">
+        <rdfs:range rdf:resource="&chml;H92_Geometric_Object"/>
+        <rdfs:domain rdf:resource="&chml;H92_Geometric_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R42_destroyed -->
+
+    <owl:ObjectProperty rdf:about="&chml;R42_destroyed">
+        <rdfs:domain rdf:resource="&chml;H1_Research_Activity"/>
+        <rdfs:subPropertyOf rdf:resource="&chml;R3_dealt_with"/>
+        <rdfs:range rdf:resource="&ecrm;E77_Persistent_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R42i_was_destroyed_by -->
+
+    <owl:ObjectProperty rdf:about="&chml;R42i_was_destroyed_by">
+        <rdfs:range rdf:resource="&chml;H1_Research_Activity"/>
+        <rdfs:subPropertyOf rdf:resource="&chml;R3i_was_dealt_with_in"/>
+        <owl:inverseOf rdf:resource="&chml;R42_destroyed"/>
+        <rdfs:domain rdf:resource="&ecrm;E77_Persistent_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R43_modified -->
+
+    <owl:ObjectProperty rdf:about="&chml;R43_modified">
+        <rdfs:domain rdf:resource="&chml;H1_Research_Activity"/>
+        <rdfs:subPropertyOf rdf:resource="&chml;R3_dealt_with"/>
+        <rdfs:range rdf:resource="&ecrm;E77_Persistent_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R43i_was_modified_by -->
+
+    <owl:ObjectProperty rdf:about="&chml;R43i_was_modified_by">
+        <rdfs:range rdf:resource="&chml;H1_Research_Activity"/>
+        <rdfs:subPropertyOf rdf:resource="&chml;R3i_was_dealt_with_in"/>
+        <owl:inverseOf rdf:resource="&chml;R43_modified"/>
+        <rdfs:domain rdf:resource="&ecrm;E77_Persistent_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R44_existed_during -->
+
+    <owl:ObjectProperty rdf:about="&chml;R44_existed_during">
+        <rdfs:range rdf:resource="&ecrm;E52_Time-Span"/>
+        <rdfs:domain rdf:resource="&ecrm;E77_Persistent_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R44i_marks_existence_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R44i_marks_existence_of">
+        <owl:inverseOf rdf:resource="&chml;R44_existed_during"/>
+        <rdfs:domain rdf:resource="&ecrm;E52_Time-Span"/>
+        <rdfs:range rdf:resource="&ecrm;E77_Persistent_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R45_can_have_part -->
+
+    <owl:ObjectProperty rdf:about="&chml;R45_can_have_part">
+        <rdfs:range rdf:resource="&chml;H6_CHML_Type"/>
+        <rdfs:domain rdf:resource="&chml;H6_CHML_Type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R45i_can_be_part_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R45i_can_be_part_of">
+        <rdfs:range rdf:resource="&chml;H6_CHML_Type"/>
+        <rdfs:domain rdf:resource="&chml;H6_CHML_Type"/>
+        <owl:inverseOf rdf:resource="&chml;R45_can_have_part"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R46_contains_birth_surname -->
+
+    <owl:ObjectProperty rdf:about="&chml;R46_contains_birth_surname">
+        <rdfs:subPropertyOf rdf:resource="&chml;R17_contains_surname"/>
+        <owl:inverseOf rdf:resource="&chml;R46i_is_birth_surname_in"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R46i_is_birth_surname_in -->
+
+    <owl:ObjectProperty rdf:about="&chml;R46i_is_birth_surname_in">
+        <rdfs:subPropertyOf rdf:resource="&chml;R17i_is_surname_in"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R47_has_alternative_name -->
+
+    <owl:ObjectProperty rdf:about="&chml;R47_has_alternative_name">
+        <rdfs:domain rdf:resource="&chml;H19_Actor"/>
+        <rdfs:range rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131_is_identified_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R47i_is_alternative_name_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R47i_is_alternative_name_of">
+        <rdfs:range rdf:resource="&chml;H19_Actor"/>
+        <owl:inverseOf rdf:resource="&chml;R47_has_alternative_name"/>
+        <rdfs:domain rdf:resource="&ecrm;E82_Actor_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P131i_identifies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R48_published -->
+
+    <owl:ObjectProperty rdf:about="&chml;R48_published">
+        <rdfs:domain rdf:resource="&chml;H50_Publication_Event"/>
+        <rdfs:subPropertyOf rdf:resource="&chml;R3_dealt_with"/>
+        <rdfs:range rdf:resource="&ecrm;E73_Information_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R48i_was_published_in -->
+
+    <owl:ObjectProperty rdf:about="&chml;R48i_was_published_in">
+        <rdfs:range rdf:resource="&chml;H50_Publication_Event"/>
+        <rdfs:subPropertyOf rdf:resource="&chml;R3i_was_dealt_with_in"/>
+        <owl:inverseOf rdf:resource="&chml;R48_published"/>
+        <rdfs:domain rdf:resource="&ecrm;E73_Information_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R49_has_virtual_location -->
+
+    <owl:ObjectProperty rdf:about="&chml;R49_has_virtual_location">
+        <rdfs:range rdf:resource="&chml;H104_Virtual_Place"/>
+        <owl:inverseOf rdf:resource="&chml;R49i_is_virtual_location_of"/>
+        <rdfs:domain rdf:resource="&ecrm;E77_Persistent_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R49i_is_virtual_location_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R49i_is_virtual_location_of">
+        <rdfs:domain rdf:resource="&chml;H104_Virtual_Place"/>
+        <rdfs:range rdf:resource="&ecrm;E77_Persistent_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R4_documents -->
+
+    <owl:ObjectProperty rdf:about="&chml;R4_documents">
+        <owl:inverseOf rdf:resource="&chml;R4i_is_documented_in"/>
+        <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:domain rdf:resource="&ecrm;E31_Document"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P70_documents"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R4i_is_documented_in -->
+
+    <owl:ObjectProperty rdf:about="&chml;R4i_is_documented_in">
+        <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:range rdf:resource="&ecrm;E31_Document"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P70i_is_documented_in"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R50_is_or_was_relation_subject_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R50_is_or_was_relation_subject_of">
+        <rdfs:range rdf:resource="&chml;H109_Personal_Relation"/>
+        <rdfs:domain rdf:resource="&chml;H14_Natural_Person"/>
+        <owl:inverseOf rdf:resource="&chml;R50i_has_or_had_subject"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P107i_is_current_or_former_member_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R50i_has_or_had_subject -->
+
+    <owl:ObjectProperty rdf:about="&chml;R50i_has_or_had_subject">
+        <rdfs:domain rdf:resource="&chml;H109_Personal_Relation"/>
+        <rdfs:range rdf:resource="&chml;H14_Natural_Person"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P107_has_current_or_former_member"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R51_is_or_was_relation_object_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R51_is_or_was_relation_object_of">
+        <rdfs:range rdf:resource="&chml;H109_Personal_Relation"/>
+        <rdfs:domain rdf:resource="&chml;H14_Natural_Person"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P107i_is_current_or_former_member_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R51i_has_or_had_object -->
+
+    <owl:ObjectProperty rdf:about="&chml;R51i_has_or_had_object">
+        <rdfs:domain rdf:resource="&chml;H109_Personal_Relation"/>
+        <rdfs:range rdf:resource="&chml;H14_Natural_Person"/>
+        <owl:inverseOf rdf:resource="&chml;R51_is_or_was_relation_object_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P107_has_current_or_former_member"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R52_has_digital_source_type -->
+
+    <owl:ObjectProperty rdf:about="&chml;R52_has_digital_source_type">
+        <rdfs:range rdf:resource="&chml;H106_Digital_Source_Type"/>
+        <rdfs:domain rdf:resource="&chml;H4_Source"/>
+        <owl:inverseOf rdf:resource="&chml;R52i_is_digital_source_type_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2_has_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R52i_is_digital_source_type_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R52i_is_digital_source_type_of">
+        <rdfs:domain rdf:resource="&chml;H106_Digital_Source_Type"/>
+        <rdfs:range rdf:resource="&chml;H4_Source"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2i_is_type_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R54_has_MIME_type -->
+
+    <owl:ObjectProperty rdf:about="&chml;R54_has_MIME_type">
+        <owl:deprecated></owl:deprecated>
+        <rdfs:domain rdf:resource="&chml;H4_Source"/>
+        <rdfs:range rdf:resource="&chml;H85_MIME_Type"/>
+        <owl:inverseOf rdf:resource="&chml;R54i_is_MIME_type_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2_has_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R54i_is_MIME_type_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R54i_is_MIME_type_of">
+        <rdfs:range rdf:resource="&chml;H4_Source"/>
+        <rdfs:domain rdf:resource="&chml;H85_MIME_Type"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2i_is_type_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R55_has_data_format_type -->
+
+    <owl:ObjectProperty rdf:about="&chml;R55_has_data_format_type">
+        <owl:deprecated></owl:deprecated>
+        <rdfs:domain rdf:resource="&chml;H4_Source"/>
+        <rdfs:range rdf:resource="&chml;H95_Data_Format"/>
+        <owl:inverseOf rdf:resource="&chml;R55i_is_data_format_type_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2_has_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R55i_is_data_format_type_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R55i_is_data_format_type_of">
+        <rdfs:range rdf:resource="&chml;H4_Source"/>
+        <rdfs:domain rdf:resource="&chml;H95_Data_Format"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P2i_is_type_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R56_has_main_name -->
+
+    <owl:ObjectProperty rdf:about="&chml;R56_has_main_name">
+        <rdfs:domain rdf:resource="&chml;H30_Geographic_Place"/>
+        <rdfs:range rdf:resource="&ecrm;E44_Place_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P87_is_identified_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R56i_is_main_name_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R56i_is_main_name_of">
+        <rdfs:range rdf:resource="&chml;H30_Geographic_Place"/>
+        <owl:inverseOf rdf:resource="&chml;R56_has_main_name"/>
+        <rdfs:domain rdf:resource="&ecrm;E44_Place_Appellation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P87i_identifies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R57_reports -->
+
+    <owl:ObjectProperty rdf:about="&chml;R57_reports">
+        <rdfs:domain rdf:resource="&chml;H2_Report"/>
+        <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P129_is_about"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R57i_is_reported_in -->
+
+    <owl:ObjectProperty rdf:about="&chml;R57i_is_reported_in">
+        <rdfs:range rdf:resource="&chml;H2_Report"/>
+        <owl:inverseOf rdf:resource="&chml;R57_reports"/>
+        <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P129i_is_subject_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R58_documents_earliest_date -->
+
+    <owl:ObjectProperty rdf:about="&chml;R58_documents_earliest_date">
+        <rdfs:domain rdf:resource="&chml;H4_Source"/>
+        <rdfs:subPropertyOf rdf:resource="&chml;R4_documents"/>
+        <rdfs:range rdf:resource="&ecrm;E52_Time-Span"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R58i_earliest_date_is_documented_in -->
+
+    <owl:ObjectProperty rdf:about="&chml;R58i_earliest_date_is_documented_in">
+        <rdfs:range rdf:resource="&chml;H4_Source"/>
+        <rdfs:subPropertyOf rdf:resource="&chml;R4i_is_documented_in"/>
+        <owl:inverseOf rdf:resource="&chml;R58_documents_earliest_date"/>
+        <rdfs:domain rdf:resource="&ecrm;E52_Time-Span"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R59_documents_latest_date -->
+
+    <owl:ObjectProperty rdf:about="&chml;R59_documents_latest_date">
+        <rdfs:domain rdf:resource="&chml;H4_Source"/>
+        <rdfs:subPropertyOf rdf:resource="&chml;R4_documents"/>
+        <rdfs:range rdf:resource="&ecrm;E52_Time-Span"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R59i_latest_date_is_documented_in -->
+
+    <owl:ObjectProperty rdf:about="&chml;R59i_latest_date_is_documented_in">
+        <rdfs:range rdf:resource="&chml;H4_Source"/>
+        <rdfs:subPropertyOf rdf:resource="&chml;R4i_is_documented_in"/>
+        <owl:inverseOf rdf:resource="&chml;R59_documents_latest_date"/>
+        <rdfs:domain rdf:resource="&ecrm;E52_Time-Span"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R5_created -->
+
+    <owl:ObjectProperty rdf:about="&chml;R5_created">
+        <rdfs:domain rdf:resource="&chml;H1_Research_Activity"/>
+        <rdfs:subPropertyOf rdf:resource="&chml;R3_dealt_with"/>
+        <rdfs:range rdf:resource="&ecrm;E77_Persistent_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R5i_was_created_by -->
+
+    <owl:ObjectProperty rdf:about="&chml;R5i_was_created_by">
+        <rdfs:range rdf:resource="&chml;H1_Research_Activity"/>
+        <rdfs:subPropertyOf rdf:resource="&chml;R3i_was_dealt_with_in"/>
+        <owl:inverseOf rdf:resource="&chml;R5_created"/>
+        <rdfs:domain rdf:resource="&ecrm;E77_Persistent_Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R60_annotated -->
+
+    <owl:ObjectProperty rdf:about="&chml;R60_annotated">
+        <rdfs:domain rdf:resource="&chml;H113_Annotation"/>
+        <rdfs:range rdf:resource="&chml;H17_Immaterial_Object"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P140_assigned_attribute_to"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R60i_was_annotated_by -->
+
+    <owl:ObjectProperty rdf:about="&chml;R60i_was_annotated_by">
+        <rdfs:range rdf:resource="&chml;H113_Annotation"/>
+        <rdfs:domain rdf:resource="&chml;H17_Immaterial_Object"/>
+        <owl:inverseOf rdf:resource="&chml;R60_annotated"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P140i_was_attributed_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R61_refers_to -->
+
+    <owl:ObjectProperty rdf:about="&chml;R61_refers_to">
+        <rdfs:domain rdf:resource="&chml;H113_Annotation"/>
+        <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P141_assigned"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R61i_is_referred_to_by -->
+
+    <owl:ObjectProperty rdf:about="&chml;R61i_is_referred_to_by">
+        <rdfs:range rdf:resource="&chml;H113_Annotation"/>
+        <owl:inverseOf rdf:resource="&chml;R61_refers_to"/>
+        <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P141i_was_assigned_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R62_represents_annotation -->
+
+    <owl:ObjectProperty rdf:about="&chml;R62_represents_annotation">
+        <rdfs:range rdf:resource="&chml;H113_Annotation"/>
+        <rdfs:domain rdf:resource="&chml;H114_Annotation_Representation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P138_represents"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R62i_has_representation -->
+
+    <owl:ObjectProperty rdf:about="&chml;R62i_has_representation">
+        <rdfs:domain rdf:resource="&chml;H113_Annotation"/>
+        <rdfs:range rdf:resource="&chml;H114_Annotation_Representation"/>
+        <owl:inverseOf rdf:resource="&chml;R62_represents_annotation"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P138i_has_representation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R6_describes -->
+
+    <owl:ObjectProperty rdf:about="&chml;R6_describes">
+        <rdfs:domain rdf:resource="&chml;H24_Description"/>
+        <rdfs:range rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P129_is_about"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R6i_is_described_in -->
+
+    <owl:ObjectProperty rdf:about="&chml;R6i_is_described_in">
+        <rdfs:range rdf:resource="&chml;H24_Description"/>
+        <owl:inverseOf rdf:resource="&chml;R6_describes"/>
+        <rdfs:domain rdf:resource="&ecrm;E1_CRM_Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P129i_is_subject_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R7_has_historical_name -->
+
+    <owl:ObjectProperty rdf:about="&chml;R7_has_historical_name">
+        <rdfs:domain rdf:resource="&chml;H30_Geographic_Place"/>
+        <rdfs:range rdf:resource="&ecrm;E48_Place_Name"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P87_is_identified_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R7i_is_historical_name_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R7i_is_historical_name_of">
+        <rdfs:range rdf:resource="&chml;H30_Geographic_Place"/>
+        <owl:inverseOf rdf:resource="&chml;R7_has_historical_name"/>
+        <rdfs:domain rdf:resource="&ecrm;E48_Place_Name"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P87i_identifies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R8_has_part -->
+
+    <owl:ObjectProperty rdf:about="&chml;R8_has_part">
+        <rdfs:comment>Key prop</rdfs:comment>
+        <rdfs:range rdf:resource="&chml;H5_Material_Object"/>
+        <rdfs:domain rdf:resource="&chml;H5_Material_Object"/>
+        <owl:inverseOf rdf:resource="&chml;R8i_is_part_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P46_is_composed_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R8i_is_part_of -->
+
+    <owl:ObjectProperty rdf:about="&chml;R8i_is_part_of">
+        <rdfs:range rdf:resource="&chml;H5_Material_Object"/>
+        <rdfs:domain rdf:resource="&chml;H5_Material_Object"/>
+        <rdfs:subPropertyOf rdf:resource="&ecrm;P46i_forms_part_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://erlangen-crm.org/140617/P138_represents -->
+
+    <rdf:Description rdf:about="&ecrm;P138_represents">
+        <rdfs:comment>Key prop (Object &lt;-&gt; 3D Model)</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://chml.foundation/ontology/R10_Time-Span_End -->
+
+    <owl:DatatypeProperty rdf:about="&chml;R10_Time-Span_End">
+        <rdfs:domain rdf:resource="&ecrm;E52_Time-Span"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://chml.foundation/ontology/R9_Time-Span_Start -->
+
+    <owl:DatatypeProperty rdf:about="&chml;R9_Time-Span_Start">
+        <rdfs:domain rdf:resource="&ecrm;E52_Time-Span"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://chml.foundation/ontology/H100_Coordinate_System_Type -->
+
+    <owl:Class rdf:about="&chml;H100_Coordinate_System_Type">
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H101_Measured_Format -->
+
+    <owl:Class rdf:about="&chml;H101_Measured_Format">
+        <rdfs:label xml:lang="en">H101 Measured Format</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H6_CHML_Type"/>
+        <skos:notation rdf:datatype="&xsd;string">H101</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Specification of standardised formats.
+
+Examples:
+– DIN A4
+– US letter
+– IPB400
+– NF
+– GIA</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H102_Access_Level -->
+
+    <owl:Class rdf:about="&chml;H102_Access_Level">
+        <rdfs:label xml:lang="en">H102 Access Level</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+        <skos:notation rdf:datatype="&xsd;string">H102</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Class for defining whether information is public or not (internal).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H103_Geocoordinates -->
+
+    <owl:Class rdf:about="&chml;H103_Geocoordinates">
+        <rdfs:label xml:lang="en">H103 Geocoordinates</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E47_Spatial_Coordinates"/>
+        <skos:notation rdf:datatype="&xsd;string">H103</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Longitude and latitude (https://en.wikipedia.org/wiki/Geographic_coordinate_system)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H104_Virtual_Place -->
+
+    <owl:Class rdf:about="&chml;H104_Virtual_Place">
+        <rdfs:label xml:lang="en">H104 Virtual Place</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E53_Place"/>
+        <skos:notation rdf:datatype="&xsd;string">H104</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+The class specify a virtual place for a annotation of digital 3D models (digital geometry).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H106_Digital_Source_Type -->
+
+    <owl:Class rdf:about="&chml;H106_Digital_Source_Type">
+        <rdfs:label xml:lang="en">H106 Digital Source Type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H6_CHML_Type"/>
+        <skos:notation rdf:datatype="&xsd;string">H106</skos:notation>
+        <rdfs:comment xml:lang="en">Remark: Can we have a shortlist with the values taken from the digital sorce type category in patrimonium.net here?
+
+
+(OWL &quot;oneOf&quot; enumeration??)</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+Specification of a digital source type, according to IPTC&apos;s Controlled Vocabulary: http://cv.iptc.org/newscodes/digitalsourcetype/</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H107_Personal_Relation_Type -->
+
+    <owl:Class rdf:about="&chml;H107_Personal_Relation_Type">
+        <rdfs:label xml:lang="en">H107 Personal Relation Type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H6_CHML_Type"/>
+        <skos:notation rdf:datatype="&xsd;string">H107</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Type (labelling) for personal relation beisde &quot;child-parent-relation&quot; and &quot;corporate-body-membership&quot;.
+
+Examples:
+– Aunt
+– Friend
+– Cousin
+– Boss</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H108_Condition_State_Type -->
+
+    <owl:Class rdf:about="&chml;H108_Condition_State_Type">
+        <rdfs:label xml:lang="en">H108 Condition State Type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H6_CHML_Type"/>
+        <skos:notation rdf:datatype="&xsd;string">H108</skos:notation>
+        <rdfs:comment xml:lang="en">Remark: Can we have a shortlist with the following values here?
+
+&quot;Good&quot;
+&quot;Damaged&quot;
+&quot;Destroyed&quot;
+&quot;Restored&quot;
+&quot;Disappeared&quot;
+
+(OWL &quot;oneOf&quot; enumeration??)</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+Class for the distinction of the Condition State of the object.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H109_Personal_Relation -->
+
+    <owl:Class rdf:about="&chml;H109_Personal_Relation">
+        <rdfs:label xml:lang="en">H109 Personal Relation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E74_Group"/>
+        <skos:notation rdf:datatype="&xsd;string">H109</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Class for personal relations beside &quot;child-parent-relations&quot; and &quot;corporate-body-memberships&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H10_Person_Type -->
+
+    <owl:Class rdf:about="&chml;H10_Person_Type">
+        <rdfs:label xml:lang="en">H10 Natural Person Type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H6_CHML_Type"/>
+        <skos:notation rdf:datatype="&xsd;string">H10</skos:notation>
+        <rdfs:comment xml:lang="en">Remark: Rename the URI H10_Person_Type in &quot;H10 Natural Person Type&quot;</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+Key type category of the natural persons.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H110_Translation -->
+
+    <owl:Class rdf:about="&chml;H110_Translation">
+        <rdfs:subClassOf rdf:resource="&chml;H21_Text"/>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H111_Social_Network_ID -->
+
+    <owl:Class rdf:about="&chml;H111_Social_Network_ID">
+        <rdfs:label xml:lang="en">H111 Social Network ID</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H23_ID"/>
+        <skos:notation rdf:datatype="&xsd;string">H111</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Social network ID.
+
+Example:
+– Facebook account ID
+– Skype account ID</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H112_Place_Type -->
+
+    <owl:Class rdf:about="&chml;H112_Place_Type">
+        <rdfs:label xml:lang="en">H112 Place Type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H6_CHML_Type"/>
+        <skos:notation rdf:datatype="&xsd;string">H112</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Key type category of the places.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H113_Annotation -->
+
+    <owl:Class rdf:about="&chml;H113_Annotation">
+        <rdfs:label xml:lang="en">H113 Annotation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E13_Attribute_Assignment"/>
+        <skos:notation rdf:datatype="&xsd;string">H113</skos:notation>
+        <rdfs:comment>Scope note:
+Partial annotation of  2D sources and 3D models, for analysis (identification of object) purposes, as well observation on 3D models.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H114_Annotation_Representation -->
+
+    <owl:Class rdf:about="&chml;H114_Annotation_Representation">
+        <rdfs:subClassOf rdf:resource="&chml;H92_Geometric_Object"/>
+        <rdfs:subClassOf rdf:resource="&ecrm;E36_Visual_Item"/>
+        <rdfs:comment xml:lang="en">Remark:
+Used for 2D and 3D annotation (by Daniel Dworak).
+Under development.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H115_Color -->
+
+    <owl:Class rdf:about="&chml;H115_Color">
+        <rdfs:label xml:lang="en">H115 RGB Colour</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E54_Dimension"/>
+        <skos:notation rdf:datatype="&xsd;string">H115</skos:notation>
+        <rdfs:comment xml:lang="en">Remark: Rename URI H115_Color in &quot;H115_RGB_Colour&quot;.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+Class for RGB colour.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H116_Annotation_Location -->
+
+    <owl:Class rdf:about="&chml;H116_Annotation_Location">
+        <rdfs:label xml:lang="en">H116 Annotation Location</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H104_Virtual_Place"/>
+        <skos:notation rdf:datatype="&xsd;string">H116</skos:notation>
+        <rdfs:comment xml:lang="en">Remark:
+Under Development.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+Class for locating 2D and 3D annotations within a virtual place (digital geometry).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H117_Author -->
+
+    <owl:Class rdf:about="&chml;H117_Author">
+        <rdfs:label xml:lang="en">H117 Author</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H14_Natural_Person"/>
+        <skos:notation rdf:datatype="&xsd;string">H117</skos:notation>
+        <rdfs:comment xml:lang="en">Remark:
+New class!</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+An author carries out (P14) H16 Creation Activity. It is a specification of the H14 Natural Person carrying out the H1 Research Activity resulting in a creation of immaterial sources or digital 3D models.
+
+A painter who painted something is a H14 Natural Person producing a physical object carrying out a H20 Historic Event. 
+
+In contrast an art historian or architect  (researcher within the project) creates a source (e.g. map) for the 3D reconstruction or a digital 3D model carrying out a H1 Research Activity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H11_Event_Type -->
+
+    <owl:Class rdf:about="&chml;H11_Event_Type">
+        <rdfs:label xml:lang="en">H11 Event Type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H6_CHML_Type"/>
+        <skos:notation rdf:datatype="&xsd;string">H11</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Key type category of the events.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H12_Corporate_Body_Type -->
+
+    <owl:Class rdf:about="&chml;H12_Corporate_Body_Type">
+        <rdfs:label xml:lang="en">H12 Corporate Body Type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H6_CHML_Type"/>
+        <skos:notation rdf:datatype="&xsd;string">H12</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Key type category of the corporate bodies.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H13_Corporate_Body -->
+
+    <owl:Class rdf:about="&chml;H13_Corporate_Body">
+        <rdfs:label xml:lang="en">H13 Corporate Body</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H19_Actor"/>
+        <rdfs:subClassOf rdf:resource="&ecrm;E74_Group"/>
+        <skos:notation rdf:datatype="&xsd;string">H13</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Is in general compliant with E74 Group.
+It also includes E40 Legal Body.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H14_Natural_Person -->
+
+    <owl:Class rdf:about="&chml;H14_Natural_Person">
+        <rdfs:label xml:lang="en">H14 Natural Person</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H19_Actor"/>
+        <rdfs:subClassOf rdf:resource="&ecrm;E21_Person"/>
+        <skos:notation rdf:datatype="&xsd;string">H14</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Is in general compliant with E21 Person.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H15_Report_Creation -->
+
+    <owl:Class rdf:about="&chml;H15_Report_Creation">
+        <rdfs:subClassOf rdf:resource="&ecrm;E65_Creation"/>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H16_Creation_Action -->
+
+    <owl:Class rdf:about="&chml;H16_Creation_Action">
+        <rdfs:label xml:lang="en">H16 Creation Activity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H1_Research_Activity"/>
+        <rdfs:subClassOf rdf:resource="&ecrm;E65_Creation"/>
+        <skos:notation rdf:datatype="&xsd;string">H16</skos:notation>
+        <rdfs:comment xml:lang="en">Remark:
+Rename the URI &quot;H16_Creation_Action&quot; in &quot;H16 Creation Activity&quot;.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+Is in general compliant with E65 Creation (activities resulting in creation of conceptual items and immaterial products).
+
+Examples:
+– 2D survey plan 
+– 2D photo documenting an object
+– 3D model</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H17_Immaterial_Object -->
+
+    <owl:Class rdf:about="&chml;H17_Immaterial_Object">
+        <rdfs:label xml:lang="en">H17 Immaterial Object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E28_Conceptual_Object"/>
+        <skos:notation rdf:datatype="&xsd;string">H17</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+This is an abstract class for providing different properties for other classes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H18_Semantic_Object -->
+
+    <owl:Class rdf:about="&chml;H18_Semantic_Object">
+        <rdfs:label xml:lang="en">H18 Comparable Object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E71_Man-Made_Thing"/>
+        <skos:notation rdf:datatype="&xsd;string">H18</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+It is an abstract class providing an ability to compare sources and material onjects with each other.
+
+Example:
+– A source is similar to another one, if .e.g. a scan of a print comes from two different archives.
+– Two Barcelona Chairs from the same production chain are equal to each other</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H19_Actor -->
+
+    <owl:Class rdf:about="&chml;H19_Actor">
+        <rdfs:subClassOf rdf:resource="&ecrm;E39_Actor"/>
+        <owl:deprecated rdf:datatype="&xsd;string"></owl:deprecated>
+        <rdfs:comment xml:lang="en">Remark:
+A new subclass of H14 Natural Person &gt; H117 Author&lt; has been created.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Remark:
+Can be deleted, in general compliant with E39 Actor.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H1_Research_Activity -->
+
+    <owl:Class rdf:about="&chml;H1_Research_Activity">
+        <rdfs:label xml:lang="en">H1 Research Activity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E7_Activity"/>
+        <owl:disjointWith rdf:resource="&chml;H20_Historic_Event"/>
+        <skos:notation rdf:datatype="&xsd;string">H1</skos:notation>
+        <rdfs:comment>Scope note:
+From the 3D reconstruction point of view the Research Activity includes all activities that are concerned with the creation of sources used for the 3D reconstruction or with the creation of 3D models.
+
+Examples:
+– Interview with the witnesses (e.g. Jewish community) on the interior design of lost German Synagogues
+– Architectural survey of a building
+– Photographic documentation of an object
+– Digital 3D reconstruction</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H20_Historic_Event -->
+
+    <owl:Class rdf:about="&chml;H20_Historic_Event">
+        <rdfs:label xml:lang="en">H20 Historic Event</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E5_Event"/>
+        <skos:notation rdf:datatype="&xsd;string">H20</skos:notation>
+        <rdfs:comment xml:lang="en">Remark:
+We renamed it. Formerly &quot;H20_Event&quot;.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+From the 3D reconstruction point of view the Historic Event includes all events that are not concerned with the creation of sources used for the 3D reconstruction or with the creation of 3D models.
+
+Examples:
+– Eruption of the Vesuvio destroying Pompei
+– The coronation of  Friedrich III. as King of Prussia
+– Construction of the Louvre Palace
+– Rembrandt painting a image on canvas</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H21_Text -->
+
+    <owl:Class rdf:about="&chml;H21_Text">
+        <rdfs:label xml:lang="en">H21 Text</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E33_Linguistic_Object"/>
+        <skos:notation rdf:datatype="&xsd;string">H21</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Wrapper for free-text annotations.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H23_ID -->
+
+    <owl:Class rdf:about="&chml;H23_ID">
+        <rdfs:label xml:lang="en">H23 ID</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E42_Identifier"/>
+        <skos:notation rdf:datatype="&xsd;string">H23</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Class for external (linked data) identifiers, e.g. in authority files or thesauri.
+
+Examples:
+– Getty AAT ID for staircase
+- GND (Gemeinsame Normdatei) ID for Johann-Wolfgang Goethe
+- URL of a specific wikipedia article</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H24_Description -->
+
+    <owl:Class rdf:about="&chml;H24_Description">
+        <rdfs:label xml:lang="en">H24 Description</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H21_Text"/>
+        <skos:notation rdf:datatype="&xsd;string">H24</skos:notation>
+        <rdfs:comment xml:lang="en">Remark@SergiuszStrykowski: Please integrate in the Blue Print the &quot;annotation&quot; via &quot;H24 Description&quot; within the TYPE-editor (as a Tab &quot;Annotate&quot;). There are no &quot;annotations&quot; within the Type-editor at this moment at patrimonium.net. We need them in the Blue Print.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+Free-text description of Objects, Sources, Actors and Types.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H25_URL -->
+
+    <owl:Class rdf:about="&chml;H25_URL">
+        <rdfs:label xml:lang="en">H25 URL</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E51_Contact_Point"/>
+        <skos:notation rdf:datatype="&xsd;string">H25</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Class for URLs.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H26_OSM_ID -->
+
+    <owl:Class rdf:about="&chml;H26_OSM_ID">
+        <rdfs:label xml:lang="en">H26 OSM ID</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H23_ID"/>
+        <skos:notation rdf:datatype="&xsd;string">H26</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+URL of Open Street Map database node (http://www.openstreetmap.org).
+
+Exmaple:
+- http://www.openstreetmap.org/node/31532228</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H27_Production -->
+
+    <owl:Class rdf:about="&chml;H27_Production">
+        <rdfs:label xml:lang="en">H27 Production Event</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H20_Historic_Event"/>
+        <rdfs:subClassOf rdf:resource="&ecrm;E12_Production"/>
+        <rdfs:comment xml:lang="en">Remark:
+Rename the URI &quot;H27_Production&quot; in &quot;H27 Production Event&quot;.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+Is in general compliant with E12 Production (activities resulting in creation of material products, physical objects).
+
+Examples:
+– Production of the fireplace in a manor house
+– Production of sculpture
+– Production of a painting</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H28_Fuzzy_Date -->
+
+    <owl:Class rdf:about="&chml;H28_Fuzzy_Date">
+        <rdfs:label xml:lang="en">H28 Imprecise Date</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E49_Time_Appellation"/>
+        <skos:notation rdf:datatype="&xsd;string">H28</skos:notation>
+        <rdfs:comment xml:lang="en">Remark: Rename URI H28_Fuzzy_Date in H28 Imprecise Date</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+Is in general compliant with E49 Time Appelation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H29_Period -->
+
+    <owl:Class rdf:about="&chml;H29_Period">
+        <rdfs:label xml:lang="en">H29 Period</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E4_Period"/>
+        <skos:notation rdf:datatype="&xsd;string">H29</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Is in general compliant with E4 Period.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H2_Report -->
+
+    <owl:Class rdf:about="&chml;H2_Report">
+        <rdfs:label xml:lang="en">H2 Report</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H21_Text"/>
+        <rdfs:subClassOf rdf:resource="&ecrm;E31_Document"/>
+        <skos:notation rdf:datatype="&xsd;string">H2</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Free-text &quot;annotation&quot; (patrimonium.net) describing activities.
+
+Examples:
+– Protocol of a computer-aided 3D-reconstruction
+– Protocol of a survey
+– Protocol o a source creation (e.g. map)
+– Description of an observation in a source, or in the field
+– Review of a 3D (reconstruction) model</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H30_Geographic_Place -->
+
+    <owl:Class rdf:about="&chml;H30_Geographic_Place">
+        <rdfs:label xml:lang="en">H30 Geographic Place</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E53_Place"/>
+        <skos:notation rdf:datatype="&xsd;string">H30</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Is in general compliant with E53 Place.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H36_2D-Image -->
+
+    <owl:Class rdf:about="&chml;H36_2D-Image">
+        <rdfs:label xml:lang="en">H36 2D-Image</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H17_Immaterial_Object"/>
+        <rdfs:subClassOf rdf:resource="&ecrm;E38_Image"/>
+        <skos:notation rdf:datatype="&xsd;string">H36</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Iconographical image (2D-image) representing something.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H37_Animal -->
+
+    <owl:Class rdf:about="&chml;H37_Animal">
+        <rdfs:subClassOf rdf:resource="&chml;H8_Object_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H38_Exterior -->
+
+    <owl:Class rdf:about="&chml;H38_Exterior">
+        <rdfs:subClassOf rdf:resource="&chml;H8_Object_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H39_Facade -->
+
+    <owl:Class rdf:about="&chml;H39_Facade">
+        <rdfs:subClassOf rdf:resource="&chml;H8_Object_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H3_3D-Reconstruction -->
+
+    <owl:Class rdf:about="&chml;H3_3D-Reconstruction">
+        <rdfs:label xml:lang="en">H3 3D-Reconstruction Model</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H17_Immaterial_Object"/>
+        <rdfs:subClassOf rdf:resource="&chml;H92_Geometric_Object"/>
+        <rdfs:subClassOf rdf:resource="&ecrm;E36_Visual_Item"/>
+        <skos:notation rdf:datatype="&xsd;string">H3</skos:notation>
+        <rdfs:comment xml:lang="en">Remark: Rename the URI H3_3D-Reconstruction in &quot;H3 3D-Reconstruction Model&quot;.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+Wrapper for 3D-Reconstruction Models assorted by Variations and Versions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H40_Furniture -->
+
+    <owl:Class rdf:about="&chml;H40_Furniture">
+        <rdfs:subClassOf rdf:resource="&chml;H8_Object_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H41_Interior -->
+
+    <owl:Class rdf:about="&chml;H41_Interior">
+        <rdfs:subClassOf rdf:resource="&chml;H8_Object_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H42_Structural -->
+
+    <owl:Class rdf:about="&chml;H42_Structural">
+        <rdfs:subClassOf rdf:resource="&chml;H8_Object_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H43_Webpage -->
+
+    <owl:Class rdf:about="&chml;H43_Webpage">
+        <rdfs:label xml:lang="en">H43 Webpage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E73_Information_Object"/>
+        <skos:notation rdf:datatype="&xsd;string">H43</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Class for the webpages</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H44_Wikipedia_Article -->
+
+    <owl:Class rdf:about="&chml;H44_Wikipedia_Article">
+        <rdfs:subClassOf rdf:resource="&chml;H43_Webpage"/>
+        <rdfs:subClassOf rdf:resource="&ecrm;E33_Linguistic_Object"/>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+        <rdfs:comment xml:lang="en">Remark: Still in use with H30 Geographic Place. The existing entries should be transferred to IdentifierSet/URL.
+
+// will be transerred by Martin Scholz within patrimonium.net</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H45_ISBN -->
+
+    <owl:Class rdf:about="&chml;H45_ISBN">
+        <rdfs:label xml:lang="en">H45 ISBN</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E42_Identifier"/>
+        <skos:notation rdf:datatype="&xsd;string">H45</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Class for a ISBN (International Standard Book Number).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H46_Equipment -->
+
+    <owl:Class rdf:about="&chml;H46_Equipment">
+        <rdfs:label xml:lang="en">H46 Equipment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+        <rdfs:comment xml:lang="en">Scope note:
+Specific items used during H1 Research Activity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H47_GND_ID -->
+
+    <owl:Class rdf:about="&chml;H47_GND_ID">
+        <rdfs:subClassOf rdf:resource="&chml;H23_ID"/>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H48_Gender -->
+
+    <owl:Class rdf:about="&chml;H48_Gender">
+        <rdfs:label xml:lang="en">H48 Gender</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+        <skos:notation rdf:datatype="&xsd;string">H48</skos:notation>
+        <rdfs:comment xml:lang="en">Remark: 
+Is it possible to integrate a enumeration list (OWL oneOf) for: Male, Female and Other</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+The gender of a natural person.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H4_Source -->
+
+    <owl:Class rdf:about="&chml;H4_Source">
+        <rdfs:label xml:lang="en">H4 Source</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H17_Immaterial_Object"/>
+        <rdfs:subClassOf rdf:resource="&chml;H18_Semantic_Object"/>
+        <rdfs:subClassOf rdf:resource="&ecrm;E31_Document"/>
+        <skos:notation rdf:datatype="&xsd;string">H4</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Class for sources of the 3D reconstruction.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H50_Publication_Event -->
+
+    <owl:Class rdf:about="&chml;H50_Publication_Event">
+        <rdfs:label xml:lang="en">H50 Publication Activity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E7_Activity"/>
+        <skos:notation rdf:datatype="&xsd;string">H50</skos:notation>
+        <rdfs:comment xml:lang="en">Remark:
+
+Please rename the URI in &quot;H50 Publication Activity&quot;.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+Class for the activity of publication of any E73 Information Object.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H51_Nationality -->
+
+    <owl:Class rdf:about="&chml;H51_Nationality">
+        <rdfs:label xml:lang="en">H51 Nationality</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E74_Group"/>
+        <rdfs:comment xml:lang="en">Scope note:
+Belonging to a certain national group.
+
+Example:
+- French</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H52_Membership -->
+
+    <owl:Class rdf:about="&chml;H52_Membership">
+        <rdfs:label xml:lang="en">H52 Membership</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E4_Period"/>
+        <skos:notation rdf:datatype="&xsd;string">H52</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Period of time during which a natural person or a corporate body is a member of a corporate body.
+
+Examples:
+– Membership of Germany in the United Nations
+– Period of time Walter Gropius joined the Bauhaus</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H53_House_Number -->
+
+    <owl:Class rdf:about="&chml;H53_House_Number">
+        <rdfs:label xml:lang="en">H53 House Number</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E45_Address"/>
+        <skos:notation rdf:datatype="&xsd;string">H53</skos:notation>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H54_Zip_Code -->
+
+    <owl:Class rdf:about="&chml;H54_Zip_Code">
+        <rdfs:label xml:lang="en">H54 Zip Code</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E45_Address"/>
+        <skos:notation rdf:datatype="&xsd;string">H54</skos:notation>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H55_Street -->
+
+    <owl:Class rdf:about="&chml;H55_Street">
+        <rdfs:label xml:lang="en">H55 Street</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E45_Address"/>
+        <skos:notation rdf:datatype="&xsd;string">H55</skos:notation>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H56_E-mail_Address -->
+
+    <owl:Class rdf:about="&chml;H56_E-mail_Address">
+        <rdfs:label xml:lang="en">H56 E-mail Address</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E51_Contact_Point"/>
+        <skos:notation rdf:datatype="&xsd;string">H56</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+E-mail address.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H57_Telephone_Number -->
+
+    <owl:Class rdf:about="&chml;H57_Telephone_Number">
+        <rdfs:label xml:lang="en">H57 Telephone Number</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E51_Contact_Point"/>
+        <skos:notation rdf:datatype="&xsd;string">H57</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Landline telephone number.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H58_Fax_Number -->
+
+    <owl:Class rdf:about="&chml;H58_Fax_Number">
+        <rdfs:label xml:lang="en">H58 Fax Number</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E51_Contact_Point"/>
+        <skos:notation rdf:datatype="&xsd;string">H58</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Fax number.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H59_Mobile_Number -->
+
+    <owl:Class rdf:about="&chml;H59_Mobile_Number">
+        <rdfs:label xml:lang="en">H59 Mobile Number</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H57_Telephone_Number"/>
+        <skos:notation rdf:datatype="&xsd;string">H59</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Mobile phone number.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H5_Material_Object -->
+
+    <owl:Class rdf:about="&chml;H5_Material_Object">
+        <rdfs:label xml:lang="en">H5 Material Object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H18_Semantic_Object"/>
+        <rdfs:subClassOf rdf:resource="&ecrm;E22_Man-Made_Object"/>
+        <skos:notation rdf:datatype="&xsd;string">H5</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Every object is modelled as a Material Object (physical object) even if it is not clear if it really existed. This is the difference between H5 Material Object and E22 Man-Made Object.
+
+The underlying assumption is that an object has sufficient backing sources, otherwise it wouldn&apos;t be chosen for reconstruction.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H60_Method -->
+
+    <owl:Class rdf:about="&chml;H60_Method">
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+        <owl:deprecated rdf:datatype="&xsd;string"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H61_Technique -->
+
+    <owl:Class rdf:about="&chml;H61_Technique">
+        <rdfs:label xml:lang="en">H61 Technique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+        <skos:notation rdf:datatype="&xsd;string">H61</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Class for general technique used (P32) during a H1 Research Activity.
+
+Examples:
+– Polygonal modelling in a 3D reconstruction
+– Multi image panorama stitching
+- Structure from Motion (SfM)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H62_GML_Point -->
+
+    <owl:Class rdf:about="&chml;H62_GML_Point">
+        <rdfs:subClassOf rdf:resource="&ecrm;E42_Identifier"/>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H65_Europeana_License -->
+
+    <owl:Class rdf:about="&chml;H65_Europeana_License">
+        <rdfs:subClassOf rdf:resource="&ecrm;E30_Right"/>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H66_Access_Right -->
+
+    <owl:Class rdf:about="&chml;H66_Access_Right">
+        <rdfs:subClassOf rdf:resource="&ecrm;E30_Right"/>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H67_Reproduction_Right -->
+
+    <owl:Class rdf:about="&chml;H67_Reproduction_Right">
+        <rdfs:subClassOf rdf:resource="&ecrm;E30_Right"/>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H68_Credit_Line -->
+
+    <owl:Class rdf:about="&chml;H68_Credit_Line">
+        <rdfs:subClassOf rdf:resource="&ecrm;E30_Right"/>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H69_Destruction -->
+
+    <owl:Class rdf:about="&chml;H69_Destruction">
+        <rdfs:subClassOf rdf:resource="&ecrm;E6_Destruction"/>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H6_CHML_Type -->
+
+    <owl:Class rdf:about="&chml;H6_CHML_Type">
+        <rdfs:label xml:lang="en">H6 CHML Type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+        <skos:notation rdf:datatype="&xsd;string">H6</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Types are used for disambiguation as a labelling system. They might be linked to thesauri and controlled vocabularies.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H70_Measured_Quantity -->
+
+    <owl:Class rdf:about="&chml;H70_Measured_Quantity">
+        <rdfs:label xml:lang="en">H70 Unit of Measurement</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H6_CHML_Type"/>
+        <skos:notation rdf:datatype="&xsd;string">H70</skos:notation>
+        <rdfs:comment xml:lang="en">Remark: Please rename the URI &quot;H70_Measured_Quantity&quot; in &quot;H70 Units of Measurement&quot;</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+Specification of the units of measurement.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H71_Measure -->
+
+    <owl:Class rdf:about="&chml;H71_Measure">
+        <rdfs:label xml:lang="en">H71 Measure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E54_Dimension"/>
+        <skos:notation rdf:datatype="&xsd;string">H71</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Measured dimension.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H72_Action_Goal -->
+
+    <owl:Class rdf:about="&chml;H72_Action_Goal">
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+        <rdfs:comment xml:lang="en">Remark:
+Will be deleted, see remarks under class H24 Description and &quot;H2 Report&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H73_Compass_Point -->
+
+    <owl:Class rdf:about="&chml;H73_Compass_Point">
+        <rdfs:subClassOf rdf:resource="&chml;H6_CHML_Type"/>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H74_Provenance_Event -->
+
+    <owl:Class rdf:about="&chml;H74_Provenance_Event">
+        <rdfs:label xml:lang="en">H74 Provenance Event</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E5_Event"/>
+        <skos:notation rdf:datatype="&xsd;string">H74</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Event used as wrapper for everything concerning the provenance of objects and sources.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H76_Title -->
+
+    <owl:Class rdf:about="&chml;H76_Title">
+        <rdfs:label xml:lang="en">H76 Title</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E41_Appellation"/>
+        <skos:notation rdf:datatype="&xsd;string">H76</skos:notation>
+        <rdfs:comment xml:lang="en">Remark@MartinScholz:
+Language specific titles, e.g. see below, please document.
+
+Title (en) --&gt; herder:H6_CHML_Type -&gt; herder:R31_has_title -&gt; patrimonium:H76_Title_en
+Title (de)
+herder:H6_CHML_Type -&gt; herder:R31_has_title -&gt; patrimonium:H76_Title_de</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+Is in general compliant with E35 Title.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H77_Inventory_Number -->
+
+    <owl:Class rdf:about="&chml;H77_Inventory_Number">
+        <rdfs:label xml:lang="en">H77 Inventory Number</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E42_Identifier"/>
+        <skos:notation rdf:datatype="&xsd;string">H77</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+ID of something in a repository.
+
+Example:
+– Signature of a book in a library
+– Inventory number of an artefact in a museum</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H78_Topic_Assignment -->
+
+    <owl:Class rdf:about="&chml;H78_Topic_Assignment">
+        <rdfs:label xml:lang="en">H78 Topic Assignment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E13_Attribute_Assignment"/>
+        <skos:notation rdf:datatype="&xsd;string">H78</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Assignment of  H79 Topic.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H79_Topic -->
+
+    <owl:Class rdf:about="&chml;H79_Topic">
+        <rdfs:label xml:lang="en">H79 Topic</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E89_Propositional_Object"/>
+        <skos:notation rdf:datatype="&xsd;string">H79</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note: 
+This class allows to introduce topics used as keywords. 
+
+Example:
+A project dealing with two palaces at two locationas can distinguish two topics: palace (A) and palace (B).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H7_Action_Type -->
+
+    <owl:Class rdf:about="&chml;H7_Action_Type">
+        <rdfs:label xml:lang="en">H7 Activity Type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H6_CHML_Type"/>
+        <skos:notation rdf:datatype="&xsd;string">H7</skos:notation>
+        <rdfs:comment xml:lang="en">Remark: Rename the URI H7_Action_Type in H7_Activity_Type</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+Key type category of the activities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H81_Address_Town -->
+
+    <owl:Class rdf:about="&chml;H81_Address_Town">
+        <rdfs:label xml:lang="en">H81 Address Town</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E45_Address"/>
+        <skos:notation rdf:datatype="&xsd;string">H81</skos:notation>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H82_3D-Reconstruction_Variation -->
+
+    <owl:Class rdf:about="&chml;H82_3D-Reconstruction_Variation">
+        <rdfs:label xml:lang="en">H82 3D-Reconstruction Model Variation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H3_3D-Reconstruction"/>
+        <skos:notation rdf:datatype="&xsd;string">H82</skos:notation>
+        <rdfs:comment xml:lang="en">Remark: Rename URI H82_3D-Reconstruction_Variation in &quot;H82 3D-Reconstruction Model Variation&quot;.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+A 3D model variation representing certain state of knowledge. There can be alternative variations. A variation can be used as a wrapper for different versions representing different stages of work.
+
+Examples:
+– Reconstruction romanic basilica with barrel vault or wooden ceiling</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H83_3D-Reconstruction_Version -->
+
+    <owl:Class rdf:about="&chml;H83_3D-Reconstruction_Version">
+        <rdfs:label xml:lang="en">H83 3D-Reconstruction Model Version</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H82_3D-Reconstruction_Variation"/>
+        <skos:notation rdf:datatype="&xsd;string">H83</skos:notation>
+        <rdfs:comment xml:lang="en">Remark: Rename URI H83_3D-Reconstruction_Version in &quot;H83 3D-Reconstruction Model Version&quot;</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+The 3D-Reconstruction Model Version represents one specific state of work created by one 3D reconstruction activity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H84_Bounding_Box -->
+
+    <owl:Class rdf:about="&chml;H84_Bounding_Box">
+        <rdfs:subClassOf rdf:resource="&chml;H92_Geometric_Object"/>
+        <owl:deprecated rdf:datatype="&xsd;string"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H85_MIME_Type -->
+
+    <owl:Class rdf:about="&chml;H85_MIME_Type">
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H86_Geometry_Point -->
+
+    <owl:Class rdf:about="&chml;H86_Geometry_Point">
+        <rdfs:subClassOf rdf:resource="&chml;H92_Geometric_Object"/>
+        <owl:deprecated rdf:datatype="&xsd;string"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H88_X -->
+
+    <owl:Class rdf:about="&chml;H88_X">
+        <rdfs:subClassOf rdf:resource="&ecrm;E54_Dimension"/>
+        <owl:deprecated rdf:datatype="&xsd;string"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H89_Y -->
+
+    <owl:Class rdf:about="&chml;H89_Y">
+        <rdfs:subClassOf rdf:resource="&ecrm;E54_Dimension"/>
+        <owl:deprecated rdf:datatype="&xsd;string"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H8_Object_Type -->
+
+    <owl:Class rdf:about="&chml;H8_Object_Type">
+        <rdfs:label xml:lang="en">H8 Object Type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H6_CHML_Type"/>
+        <skos:notation rdf:datatype="&xsd;string">H8</skos:notation>
+        <rdfs:comment xml:lang="en">Remark@MartinScholz: Where is the type category &quot;organisational&quot;? Or are the children of this class not necessary anymore?</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+Key type category of the objects. Wrapper for different kinds of object types.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H90_Z -->
+
+    <owl:Class rdf:about="&chml;H90_Z">
+        <rdfs:subClassOf rdf:resource="&ecrm;E54_Dimension"/>
+        <owl:deprecated rdf:datatype="&xsd;string"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H91_Software -->
+
+    <owl:Class rdf:about="&chml;H91_Software">
+        <rdfs:label xml:lang="en">H91 Software</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H17_Immaterial_Object"/>
+        <skos:notation rdf:datatype="&xsd;string">H91</skos:notation>
+        <rdfs:comment xml:lang="en">Remark: Take the class H91 Software out of H17 Immaterial Object; integrate the class under the class E73 Information Object.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Scope note:
+Software, is that part of a computer system that consists of encoded information or computer instructions. The term is roughly synonymous with computer program, but is more generic in scope. 
+
+(from https://en.wikipedia.org/wiki/Software).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H92_Geometric_Object -->
+
+    <owl:Class rdf:about="&chml;H92_Geometric_Object">
+        <rdfs:subClassOf rdf:resource="&chml;H17_Immaterial_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H93_Level_Of_Detail -->
+
+    <owl:Class rdf:about="&chml;H93_Level_Of_Detail">
+        <rdfs:subClassOf rdf:resource="&ecrm;E54_Dimension"/>
+        <owl:deprecated rdf:datatype="&xsd;string"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H94_Level_Of_Hypothesis -->
+
+    <owl:Class rdf:about="&chml;H94_Level_Of_Hypothesis">
+        <rdfs:subClassOf rdf:resource="&ecrm;E54_Dimension"/>
+        <owl:deprecated rdf:datatype="&xsd;string"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H95_Data_Format -->
+
+    <owl:Class rdf:about="&chml;H95_Data_Format">
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H96_Level_Of_Information -->
+
+    <owl:Class rdf:about="&chml;H96_Level_Of_Information">
+        <rdfs:subClassOf rdf:resource="&ecrm;E54_Dimension"/>
+        <owl:deprecated rdf:datatype="&xsd;string"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H97_DOI -->
+
+    <owl:Class rdf:about="&chml;H97_DOI">
+        <rdfs:label xml:lang="en">H97 DOI</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecrm;E42_Identifier"/>
+        <skos:notation rdf:datatype="&xsd;string">H97</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Class for DOI (Digital Object Identifier).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H99_Geometric_Precision -->
+
+    <owl:Class rdf:about="&chml;H99_Geometric_Precision">
+        <rdfs:subClassOf rdf:resource="&ecrm;E55_Type"/>
+        <owl:deprecated xml:lang="en"></owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://chml.foundation/ontology/H9_Source_Type -->
+
+    <owl:Class rdf:about="&chml;H9_Source_Type">
+        <rdfs:label xml:lang="en">H9 Source Type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&chml;H6_CHML_Type"/>
+        <skos:notation rdf:datatype="&xsd;string">H9</skos:notation>
+        <rdfs:comment xml:lang="en">Scope note:
+Key type category of the sources.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://erlangen-crm.org/140617/E34_Inscription -->
+
+    <rdf:Description rdf:about="&ecrm;E34_Inscription">
+        <rdfs:subClassOf rdf:resource="&chml;H21_Text"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.patrimonium.net/content/E42_Identifier_de -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_de">
+        <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
+        <ecrm:P3_has_note>DE</ecrm:P3_has_note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.patrimonium.net/content/E42_Identifier_en -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_en">
+        <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
+        <ecrm:P3_has_note> EN</ecrm:P3_has_note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.patrimonium.net/content/E42_Identifier_la -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_la">
+        <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
+        <ecrm:P3_has_note>LA</ecrm:P3_has_note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.patrimonium.net/content/E42_Identifier_marznr -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_marznr">
+        <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
+        <ecrm:P3_has_note>Marzyński</ecrm:P3_has_note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.patrimonium.net/content/E42_Identifier_pl -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_pl">
+        <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
+        <ecrm:P3_has_note>PL</ecrm:P3_has_note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.patrimonium.net/content/E42_Identifier_ru -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_ru">
+        <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
+        <ecrm:P3_has_note>RU</ecrm:P3_has_note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.patrimonium.net/content/E56_Language_de -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_de">
+        <rdf:type rdf:resource="&ecrm;E56_Language"/>
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_de"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.patrimonium.net/content/E56_Language_en -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_en">
+        <rdf:type rdf:resource="&ecrm;E56_Language"/>
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_en"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.patrimonium.net/content/E56_Language_la -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_la">
+        <rdf:type rdf:resource="&ecrm;E56_Language"/>
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_la"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.patrimonium.net/content/E56_Language_pl -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_pl">
+        <rdf:type rdf:resource="&ecrm;E56_Language"/>
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_pl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.patrimonium.net/content/E56_Language_ru -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_ru">
+        <rdf:type rdf:resource="&ecrm;E56_Language"/>
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_ru"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.patrimonium.net/content/H75_Encoding_marznr -->
+
+    <owl:NamedIndividual rdf:about="&herder-inst;H75_Encoding_marznr">
+        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_marznr"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="&ecrm;P143_joined">
+        <rdfs:comment>This is a shortcut for H19_Actor -&gt; P143 joined -&gt; E85 Joining -&gt; R22 beginnt -&gt; H52 Zugehoerigkeit</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="&ecrm;E24_Physical_Man-Made_Thing">
+        <rdfs:comment rdf:datatype="&xsd;string">Scope note:
+
+Every object is modelled as referring to a Material Object (physical object) even if it is not clear if it really existed. 
+This is the difference between H5 Material Object and E22 Man-Made Object. The underlying assumption is that an object has sufficient backing sources, otherwise it wouldn&apos;t be chosen for 3D reconstruction.</rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
