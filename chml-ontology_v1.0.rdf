@@ -6,7 +6,6 @@
     <!ENTITY ecrm "http://erlangen-crm.org/140617/" >
     <!ENTITY herder "http://chml.foundation/ontology/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY herder-inst "http://www.patrimonium.net/content/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
@@ -20,7 +19,6 @@
      xmlns:ecrm="http://erlangen-crm.org/140617/"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:herder-inst="http://www.patrimonium.net/content/">
     <owl:Ontology rdf:about="http://chml.foundation/ontology/">
         <owl:versionInfo rdf:datatype="&xsd;integer">141027</owl:versionInfo>
         <rdfs:comment xml:lang="de">141027 (Martin Scholz):
@@ -2194,7 +2192,7 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
 
     <!-- http://www.patrimonium.net/content/E42_Identifier_de -->
 
-    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_de">
+    <owl:NamedIndividual rdf:about="http://www.patrimonium.net/content/E42_Identifier_de">
         <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
         <ecrm:P3_has_note>DE</ecrm:P3_has_note>
     </owl:NamedIndividual>
@@ -2203,7 +2201,7 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
 
     <!-- http://www.patrimonium.net/content/E42_Identifier_en -->
 
-    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_en">
+    <owl:NamedIndividual rdf:about="http://www.patrimonium.net/content/E42_Identifier_en">
         <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
         <ecrm:P3_has_note> EN</ecrm:P3_has_note>
     </owl:NamedIndividual>
@@ -2212,25 +2210,17 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
 
     <!-- http://www.patrimonium.net/content/E42_Identifier_la -->
 
-    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_la">
+    <owl:NamedIndividual rdf:about="http://www.patrimonium.net/content/E42_Identifier_la">
         <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
         <ecrm:P3_has_note>LA</ecrm:P3_has_note>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.patrimonium.net/content/E42_Identifier_marznr -->
-
-    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_marznr">
-        <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
-        <ecrm:P3_has_note>Marzyński</ecrm:P3_has_note>
-    </owl:NamedIndividual>
-    
-
 
     <!-- http://www.patrimonium.net/content/E42_Identifier_pl -->
 
-    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_pl">
+    <owl:NamedIndividual rdf:about="http://www.patrimonium.net/content/E42_Identifier_pl">
         <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
         <ecrm:P3_has_note>PL</ecrm:P3_has_note>
     </owl:NamedIndividual>
@@ -2239,7 +2229,7 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
 
     <!-- http://www.patrimonium.net/content/E42_Identifier_ru -->
 
-    <owl:NamedIndividual rdf:about="&herder-inst;E42_Identifier_ru">
+    <owl:NamedIndividual rdf:about="http://www.patrimonium.net/content/E42_Identifier_ru">
         <rdf:type rdf:resource="&ecrm;E42_Identifier"/>
         <ecrm:P3_has_note>RU</ecrm:P3_has_note>
     </owl:NamedIndividual>
@@ -2248,7 +2238,7 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
 
     <!-- http://www.patrimonium.net/content/E56_Language_de -->
 
-    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_de">
+    <owl:NamedIndividual rdf:about="http://www.patrimonium.net/content/E56_Language_de">
         <rdf:type rdf:resource="&ecrm;E56_Language"/>
         <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_de"/>
     </owl:NamedIndividual>
@@ -2257,7 +2247,7 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
 
     <!-- http://www.patrimonium.net/content/E56_Language_en -->
 
-    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_en">
+    <owl:NamedIndividual rdf:about="http://www.patrimonium.net/content/E56_Language_en">
         <rdf:type rdf:resource="&ecrm;E56_Language"/>
         <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_en"/>
     </owl:NamedIndividual>
@@ -2266,7 +2256,7 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
 
     <!-- http://www.patrimonium.net/content/E56_Language_la -->
 
-    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_la">
+    <owl:NamedIndividual rdf:about="http://www.patrimonium.net/content/E56_Language_la">
         <rdf:type rdf:resource="&ecrm;E56_Language"/>
         <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_la"/>
     </owl:NamedIndividual>
@@ -2275,7 +2265,7 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
 
     <!-- http://www.patrimonium.net/content/E56_Language_pl -->
 
-    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_pl">
+    <owl:NamedIndividual rdf:about="http://www.patrimonium.net/content/E56_Language_pl">
         <rdf:type rdf:resource="&ecrm;E56_Language"/>
         <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_pl"/>
     </owl:NamedIndividual>
@@ -2284,17 +2274,9 @@ Note: in modelGeometryType there is a superfluous choice construct</mappingGuide
 
     <!-- http://www.patrimonium.net/content/E56_Language_ru -->
 
-    <owl:NamedIndividual rdf:about="&herder-inst;E56_Language_ru">
+    <owl:NamedIndividual rdf:about="http://www.patrimonium.net/content/E56_Language_ru">
         <rdf:type rdf:resource="&ecrm;E56_Language"/>
         <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_ru"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.patrimonium.net/content/H75_Encoding_marznr -->
-
-    <owl:NamedIndividual rdf:about="&herder-inst;H75_Encoding_marznr">
-        <ecrm:P48_has_preferred_identifier rdf:resource="&herder-inst;E42_Identifier_marznr"/>
     </owl:NamedIndividual>
     
 
